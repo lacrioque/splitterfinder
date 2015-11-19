@@ -5,6 +5,7 @@
   "authors": [
     "Markus Fluer <markus.fluer@syncomnet.com>"
   ],
+  "directory": "src/lib/",
   "description": "Ein Heldengenerator für das geniale Pn&Paper Splittermond",
   "main": "index.js",
   "moduleType": [
@@ -12,11 +13,11 @@
   ],
   "license": "GPL-2.0",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-material": "~0.11.4",
+    "ngDraggable": "~0.1.8"
+  }
 }
