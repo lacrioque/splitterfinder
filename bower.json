@@ -1,0 +1,22 @@
+{
+  "name": "splitterfinder",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lacrioque/splitterfinder",
+  "authors": [
+    "Markus Fluer <markus.fluer@syncomnet.com>"
+  ],
+  "description": "Ein Heldengenerator für das geniale Pn&Paper Splittermond",
+  "main": "index.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "GPL-2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
