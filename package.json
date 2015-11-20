@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-install": "^0.6.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.7",
+    "gulp-webserver": "^0.9.1",
+    "run-sequence": "^1.1.5",
+    "shelljs": "^0.5.3",
+    "yargs": "^3.30.0"
+  }
+}
