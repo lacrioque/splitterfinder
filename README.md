@@ -4,7 +4,7 @@
 
 Die Erstellung eines Helden in Splittermond ist relativ einfach, trotzdem kostet es Zeit alle Werte rauszusuchen und einzutragen. 
 Das soll dieses Programm einfacher machen.
-Natürlich soll es in keinem Fall das Blättern durch das tolle [url=http://www.splittermond.de]Regelwerk[/url] ersetzen, nur die Erstellung selbst erleichtern. 
+Natürlich soll es in keinem Fall das Blättern durch das tolle [Regelwerk](http://www.splittermond.de) ersetzen, nur die Erstellung selbst erleichtern. 
 
 ## Wie?
 
