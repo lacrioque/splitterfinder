@@ -1,0 +1,39 @@
+{
+  "name": "splitterfinder",
+  "version": "1.0.0",
+  "description": "Ein Heldengenerator für das geniale Pn&Paper Splittermond",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacrioque/splitterfinder.git"
+  },
+  "author": "Markus Flür",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/lacrioque/splitterfinder/issues"
+  },
+  "homepage": "https://github.com/lacrioque/splitterfinder#readme",
+  "dependencies": {
+    "jsonfile": "^2.2.3",
+    "lodash": "^3.10.1",
+    "nedb": "^1.4.0",
+    "pdffiller": "^0.1.1",
+    "q": "^1.4.1"
+  },
+  "window": {
+    "title": "Splitterfinder",
+    "icon": "res/splitterfinder_icon.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 800,
+    "height": 500,
+    "position": "center",
+    "min_width": 400,
+    "min_height": 200,
+    "max_width": 800,
+    "max_height": 600
+  }
+}

@@ -4,31 +4,83 @@ var gulp = require('gulp'),
 	bower = require('bower'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
+	install = require("gulp-install"),
+    minifyCss = require('gulp-minify-css'),
+    webserver = require('gulp-webserver'),
 	sh = require('shelljs'),
     fs = require('fs'),
     path = require('path'),
+    basepath = process.cwd(),
+    destpath = path.join(basepath,'dist'),
 	runSequence = require('run-sequence'),
 	NwBuilder = require('nw-builder'),
 	args = require('yargs')
 		.alias('r', 'run')
-		.alias('win', 'windows')
-		.alias('mac', 'osx')
+		.alias('w', 'windows')
+		.alias('m', 'osx')
 		.alias('l', 'linux')
-		.alias('x32', 'with_x32')
+		.alias('x', 'with_x32')
 		.alias('v', 'version')
+		.alias('b', 'build')
+		.alias('s', 'silent')
 		.default('run', true)
 		.default('windows', false)
 		.default('osx', false)
 		.default('with_x32', false)
 		.default('linux', true)
 		.default('version', 'latest')
-		.argv;
+        .default('build', false)
+        .default('silent', false)
+        .default('all', false)
+		.argv,
+    osx = args.osx,
+	windows = args.windows,
+	linux = args.linux,
+	x32 = args.with_x32,
+	run = args.run,
+	build = args.build,
+	silence = args.silent,
+	all = args.all,
+	version = args.version,
+	platforms = [];
+	
+if(windows || all){
+	platforms.push('win64');
+	if(x32){
+		platforms.push('win32');
+	}
+}
 
-gulp.task('default', function(done){runSequence(['concat', 'versioning'], 'collect-dist', done);});
+if(osx || all){
+	platforms.push('osx64');
+	if(x32){
+		platforms.push('osx32');
+	}
+}
 
-gulp.task('concat', ['services','controller']);
+if(linux || all){
+	platforms.push('linux64');
+	if(x32){
+		platforms.push('linux32');
+	}
+}
 
-gulp.task('run', function(done){runSequence('default', 'nw', done);});
+
+gulp.task('default', function(done){runSequence(['concat', 'versioning'], 'collect-dist', 'install-deps', done);});
+
+gulp.task('concat', ['services','controller', 'css']);
+
+gulp.task('build', function(done){runSequence('default', 'nw', done);});
+
+gulp.task('serve', function(done){runSequence('default', 'serve_dist', done);});
+
+gulp.task('run',function(done){
+        if(build){
+            runSequence('default', 'nw-run', done);
+        } else {
+            runSequence('nw-run', done);
+        }
+});
 
 gulp.task('services', function(done){
     return gulp.src('./src/js/services/*.js')
@@ -44,61 +96,19 @@ gulp.task('controller', function(done){
     
 });
 
+gulp.task('css', function(){
+    return gulp.src('./src/css/**/**')
+        .pipe(concat('app.css'))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('./dist/css/'));
+});
+
 gulp.task('versioning', function(done){
     var time = new Date().getTime();
-    var pkg = require('./package.json');
+    var pkg = require('./src/package.json');
     var outString = "var APPVERSION ='"+pkg.version+"', BUILDNUMBER='"+time+"';";
     fs.writeFileSync('./src/APPINFO.js', outString, 'utf8');
     done();
-});
-
-/**
-* nwjs controlling via gulp
-*/
-var osx = args.osx,
-	windows = args.windows,
-	linux = args.linux,
-	x32 = args.with_x32,
-	run = args.run,
-	platforms = [];
-	
-if(windows){
-	platforms.push('win64');
-	if(x32){
-		platforms.push('win32');
-	}
-}
-
-if(osx){
-	platforms.push('osx64');
-	if(x32){
-		platforms.push('osx32');
-	}
-}
-
-if(linux){
-	platforms.push('linux64');
-	if(x32){
-		platforms.push('linux32');
-	}
-}
-
-var nw = new NwBuilder({
-	files: "dist/**/**",
-	platforms: platforms
-});
-
-gulp.task('nw' , function(done){
-	// Build returns a promise
-	nw.build().then(function () {
-	   console.log('all done!');
-	   if(run){
-		   //open new build project here
-	   }
-	   done();
-	}).catch(function (error) {
-		console.error(error);
-	});
 });
 
 gulp.task('collect-dist', function(done){
@@ -106,8 +116,8 @@ gulp.task('collect-dist', function(done){
     .pipe(gulp.dest('dist/')).on('end', function(){
         gulp.src('src/templates/**/*.html')
         .pipe(gulp.dest('dist/templates/')).on('end', function(){
-            gulp.src('src/lib/**/*.*')
-            .pipe(gulp.dest('dist/lib/')).on('end', function(){
+            gulp.src('src/modules/**/*.*')
+            .pipe(gulp.dest('dist/modules/')).on('end', function(){
                 gulp.src(['src/js/*.js'])
                 .pipe(gulp.dest('dist/js/')).on('end', done);
             });
@@ -115,6 +125,54 @@ gulp.task('collect-dist', function(done){
     });
 });
 
+gulp.task('install-deps', function(done){
+    process.chdir(destpath);
+    var proc_bower = sh.exec('bower install', {async:true,silent:silence});
+    if(!silence){ proc_bower.stdout.on('data', console.log); }
+    proc_bower.on('exit', function(code, signal){
+        var proc_npm = sh.exec('npm install --production', {async:true,silent:silence});
+            if(!silence){ proc_npm.stdout.on('data', console.log);}
+            proc_npm.on('exit', function(code, signal){process.chdir(basepath);done();});
+    });
+});
+/**
+* nwjs controlling via gulp
+*/
+
+gulp.task('nw' , function(done){
+    var nw = new NwBuilder({
+        files: ["LICENCE", "./dist/**/**"],
+        platforms: platforms,
+        version: version
+    });
+    nw.build().then(function () {
+       console.log('all done!');
+       if(run){
+           //open new build project here
+       }
+       done();
+    }).catch(function (error) {
+        console.error(error);
+    });
+
+});
+
+gulp.task('nw-run', function(done){
+    var run_proc = sh.exec('nwbuild -r ./dist/ -v '+version, {async:true,silent:silence});
+        run_proc.stdout.on('data', console.log);
+        run_proc.on('exit',done);
+});
+
+gulp.task('serve_dist', function(done){
+    gulp.src('dist/')
+        .pipe(webserver({
+            livereload: true,
+            directoryListing: false,
+            open: true,
+            fallback: 'index.html'
+        })
+    ).on('end',done);
+});
 
 gulp.task('install', ['git-check'], function() {
   return bower.commands.install()
