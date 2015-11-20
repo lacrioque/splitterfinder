@@ -88,7 +88,7 @@ var nw = new NwBuilder({
 	platforms: platforms
 });
 
-gul.task('nw' , function(done){
+gulp.task('nw' , function(done){
 	// Build returns a promise
 	nw.build().then(function () {
 	   console.log('all done!');
@@ -99,18 +99,20 @@ gul.task('nw' , function(done){
 	}).catch(function (error) {
 		console.error(error);
 	});
-})
+});
 
 gulp.task('collect-dist', function(done){
     gulp.src(['src/*'])
-    .pipe(gulp.dest('dist/'));
-    gulp.src('src/templates/**/*.html')
-    .pipe(gulp.dest('dist/templates/'));
-    gulp.src('src/lib/**/*.*')
-    .pipe(gulp.dest('dist/lib/'))
-    .on('end', done);
-    gulp.src(['src/js/*.js'])
-    .pipe(gulp.dest('dist/js/'));
+    .pipe(gulp.dest('dist/')).on('end', function(){
+        gulp.src('src/templates/**/*.html')
+        .pipe(gulp.dest('dist/templates/')).on('end', function(){
+            gulp.src('src/lib/**/*.*')
+            .pipe(gulp.dest('dist/lib/')).on('end', function(){
+                gulp.src(['src/js/*.js'])
+                .pipe(gulp.dest('dist/js/')).on('end', done);
+            });
+        });
+    });
 });
 
 
