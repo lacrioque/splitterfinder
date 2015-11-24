@@ -25,4 +25,11 @@ angular.module('splitterfinder', [
 				controller: "mainViewCtrl"
 				}
 			);
-	});
+	})
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('amber')
+    .accentPalette('deep-orange')
+	.warnPalette('red')
+	.backgroundPalette('amber');
+});

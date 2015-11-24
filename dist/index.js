@@ -1,6 +1,5 @@
 /*globals node, window, export, console*/
-var require = window.require,
-    fs = require("fs"),
+var fs = require("fs"),
     q = require("q"),
     _ = require("lodash"),
     database = require("./modules/database_connect.js"),
