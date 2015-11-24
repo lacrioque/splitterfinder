@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lacrioque/splitterfinder#readme",
   "dependencies": {
+    "forge": "^2.3.0",
     "jsonfile": "^2.2.3",
     "lodash": "^3.10.1",
     "nedb": "^1.4.0",

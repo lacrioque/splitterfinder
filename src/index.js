@@ -5,4 +5,5 @@ var fs = require("fs"),
     database = require("./modules/database_connect.js"),
     calculation = require("./modules/calculate_values.js"),
     exportImport = require("./modules/export_import.js"),
+    encrytion = require('forge'),
     pdf = require("./modules/pdf_generation.js");
