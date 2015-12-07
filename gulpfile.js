@@ -92,7 +92,6 @@ gulp.task('beautifySrc', function(done){
                 globals : "module, require, console",
                 node : true
             }))
-            .pipe(gulp.dest("./src"))
             .on('end', end);
         },
         function(end){
@@ -101,7 +100,6 @@ gulp.task('beautifySrc', function(done){
                 globals : "angular, require, console",
                 node : true
             }))
-            .pipe(gulp.dest("./src"))
             .on('end', end);
         }], done);
 });
