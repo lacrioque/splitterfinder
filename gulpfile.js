@@ -7,8 +7,10 @@ var gulp = require('gulp'),
 	install = require("gulp-install"),
     minifyCss = require('gulp-minify-css'),
     webserver = require('gulp-webserver'),
+    fixmyjs = require('gulp-fixmyjs'),
 	sh = require('shelljs'),
     fs = require('fs'),
+    async = require('async'),
     path = require('path'),
     basepath = process.cwd(),
     destpath = path.join(basepath,'dist'),
@@ -66,7 +68,7 @@ if(linux || all){
 }
 
 
-gulp.task('default', function(done){runSequence(['concat', 'versioning'], 'collect-dist', 'install-deps', done);});
+gulp.task('default', function(done){'beautifySrc', runSequence(['concat', 'versioning'], 'collect-dist', 'install-deps', done);});
 
 gulp.task('concat', ['services','controller', 'css']);
 
@@ -80,6 +82,28 @@ gulp.task('run',function(done){
         } else {
             runSequence('nw-run', done);
         }
+});
+
+gulp.task('beautifySrc', function(done){
+    async.parallel([
+        function(end){
+            gulp.src(["./src/modules/*.js"])
+            .pipe(fixmyjs({
+                globals : "module, require, console",
+                node : true
+            }))
+            .pipe(gulp.dest("./src"))
+            .on('end', end);
+        },
+        function(end){
+            gulp.src(["./src/js/*.js"])
+            .pipe(fixmyjs({
+                globals : "angular, require, console",
+                node : true
+            }))
+            .pipe(gulp.dest("./src"))
+            .on('end', end);
+        }], done);
 });
 
 gulp.task('services', function(done){
@@ -112,17 +136,28 @@ gulp.task('versioning', function(done){
 });
 
 gulp.task('collect-dist', function(done){
-    gulp.src(['src/*'])
-    .pipe(gulp.dest('dist/')).on('end', function(){
-        gulp.src('src/templates/**/*.html')
-        .pipe(gulp.dest('dist/templates/')).on('end', function(){
+    async.parallel([
+        function(end){
+            gulp.src(['src/*'])
+                .pipe(gulp.dest('dist/'))
+                .on('end',end);
+        },
+         function(end){
+            gulp.src('src/templates/**/*.html')
+                .pipe(gulp.dest('dist/templates/'))
+                .on('end', end); 
+        },
+         function(end){
             gulp.src('src/modules/**/*.*')
-            .pipe(gulp.dest('dist/modules/')).on('end', function(){
+                .pipe(gulp.dest('dist/modules/'))
+                .on('end', end);
+         },
+         function(end){
                 gulp.src(['src/js/*.js'])
-                .pipe(gulp.dest('dist/js/')).on('end', done);
-            });
-        });
-    });
+                    .pipe(gulp.dest('dist/js/'))
+                    .on('end', end);
+            }
+    ], done);
 });
 
 gulp.task('install-deps', function(done){

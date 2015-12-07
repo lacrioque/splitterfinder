@@ -1,8 +1,11 @@
 {
   "devDependencies": {
+    "async": "^1.5.0",
     "bower": "^1.6.5",
+    "fixmyjs": "^1.0.3",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
+    "gulp-fixmyjs": "^1.0.2",
     "gulp-install": "^0.6.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
@@ -13,6 +16,7 @@
     "yargs": "^3.30.0"
   },
   "dependencies": {
-    "forge": "^2.3.0"
+    "forge": "^2.3.0",
+    "fs-extra": "^0.26.2"
   }
 }
