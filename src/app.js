@@ -13,9 +13,11 @@ angular.module('splitterfinder', [
   }).when('/admin', {
     templateUrl: 'templates/admin_view.tpl.html',
     controller: 'adminCtrl'
-  }).otherwise({
+  }).when('/main',{
     templateUrl: 'templates/main_view.tpl.html',
     controller: 'mainViewCtrl'
+  }).otherwise({
+    redirectTo : 'main'
   });
 }).config(function ($mdThemingProvider) {
   $mdThemingProvider.theme('default').primaryPalette('amber').accentPalette('deep-orange').warnPalette('red').backgroundPalette('amber');

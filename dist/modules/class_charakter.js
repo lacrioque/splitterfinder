@@ -3,7 +3,7 @@
  * aus diesem kann man nachher den CharakterBogen befüllen
  * 
  */
-var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = function (charakterObjekt) {
+var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = require('./claculate_values.js'), CHARAKTER = function (charakterObjekt) {
     charakterObjekt = charakterObjekt || {};
     var __charakter = {
         id: '',
@@ -324,6 +324,8 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
       },
       //PRIVATE METHODEN
       __abgeleiteteWerteAusrechnen = function () {
+        var abgeleitete_werte = calculation.abgeleiteteWerte(__charakter);
+        __charakter.abgeleitet = abgeleitete_werte;
       }, __setCharakterObjekt = function (charakterObjekt) {
         _.merge(__charakter, charakterObjekt);
       },

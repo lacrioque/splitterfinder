@@ -3,7 +3,7 @@
  * aus diesem kann man nachher den CharakterBogen befüllen
  * 
  */
-var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = function (charakterObjekt) {
+var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = require('./claculate_values.js'), CHARAKTER = function (charakterObjekt) {
     charakterObjekt = charakterObjekt || {};
     var __charakter = {
         id: '',
@@ -27,7 +27,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
         heldengrad: '',
         erfahrungspunkte: {
           gesamt: '',
-          eignesetzt: '',
+          eingesetzt: '',
           offen: ''
         },
         attribute: {
@@ -53,6 +53,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
         fertigkeiten: {
           akrobatik: {
             wert: '',
+            punkte: '',
             attr: [
               'BEW',
               'STA'
@@ -60,6 +61,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           alchemie: {
             wert: '',
+            punkte: '',
             attr: [
               'MYS',
               'VER'
@@ -68,12 +70,14 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           anfuehren: {
             wert: '',
             attr: [
+            punkte: '',
               'AUS',
               'WIL'
             ]
           },
           arkaneKunde: {
             wert: '',
+            punkte: '',
             attr: [
               'MYS',
               'VER'
@@ -81,6 +85,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           athletik: {
             wert: '',
+            punkte: '',
             attr: [
               'BEW',
               'STA'
@@ -88,6 +93,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           darbietung: {
             wert: '',
+            punkte: '',
             attr: [
               'AUS',
               'WIL'
@@ -95,6 +101,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           diplomatie: {
             wert: '',
+            punkte: '',
             attr: [
               'AUS',
               'VER'
@@ -102,6 +109,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           edelhandwerk: {
             wert: '',
+            punkte: '',
             attr: [
               'INT',
               'VER'
@@ -109,6 +117,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           empathie: {
             wert: '',
+            punkte: '',
             attr: [
               'INT',
               'VER'
@@ -116,6 +125,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           entschlossenheit: {
             wert: '',
+            punkte: '',
             attr: [
               'AUS',
               'WIL'
@@ -123,6 +133,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           fingerfertigkeit: {
             wert: '',
+            punkte: '',
             attr: [
               'AUS',
               'BEW'
@@ -130,6 +141,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           geschichteUndMythen: {
             wert: '',
+            punkte: '',
             attr: [
               'MYS',
               'VER'
@@ -138,12 +150,14 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           handwerk: {
             wert: '',
             attr: [
+            punkte: '',
               'KON',
               'VER'
             ]
           },
           heilkunde: {
             wert: '',
+            punkte: '',
             attr: [
               'INT',
               'VER'
@@ -151,6 +165,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           heimlichkeit: {
             wert: '',
+            punkte: '',
             attr: [
               'BEW',
               'INT'
@@ -158,6 +173,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           jagdkunst: {
             wert: '',
+            punkte: '',
             attr: [
               'KON',
               'VER'
@@ -165,6 +181,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           laenderkunde: {
             wert: '',
+            punkte: '',
             attr: [
               'INT',
               'VER'
@@ -173,12 +190,14 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           naturkunde: {
             wert: '',
             attr: [
+            punkte: '',
               'INT',
               'VER'
             ]
           },
           redegewandtheit: {
             wert: '',
+            punkte: '',
             attr: [
               'AUS',
               'WIL'
@@ -186,6 +205,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           schloesserUndFallen: {
             wert: '',
+            punkte: '',
             attr: [
               'INT',
               'BEW'
@@ -193,6 +213,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           schwimmen: {
             wert: '',
+            punkte: '',
             attr: [
               'STA',
               'KON'
@@ -201,12 +222,14 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           seefahrt: {
             wert: '',
             attr: [
+            punkte: '',
               'BEW',
               'KON'
             ]
           },
           strassenkunde: {
             wert: '',
+            punkte: '',
             attr: [
               'AUS',
               'INT'
@@ -214,6 +237,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           tierfuehrung: {
             wert: '',
+            punkte: '',
             attr: [
               'AUS',
               'BEW'
@@ -221,6 +245,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           Ueberleben: {
             wert: '',
+            punkte: '',
             attr: [
               'INT',
               'KON'
@@ -228,6 +253,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           wahrnehmung: {
             wert: '',
+            punkte: '',
             attr: [
               'INT',
               'WIL'
@@ -235,6 +261,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           },
           zaehigkeit: {
             wert: '',
+            punkte: '',
             attr: [
               'KON',
               'WIL'
@@ -294,6 +321,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
           schusswaffen: '',
           wurfwaffen: ''
         },
+        ausruestung : {},
         waffen: {
           waffenlos: {
             wert: '',
@@ -324,6 +352,8 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), CHARAKTER = fu
       },
       //PRIVATE METHODEN
       __abgeleiteteWerteAusrechnen = function () {
+        var abgeleitete_werte = calculation.abgeleiteteWerte(__charakter);
+        __charakter.abgeleitet = abgeleitete_werte;
       }, __setCharakterObjekt = function (charakterObjekt) {
         _.merge(__charakter, charakterObjekt);
       },
