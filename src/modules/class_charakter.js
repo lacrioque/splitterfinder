@@ -69,8 +69,8 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = 
           },
           anfuehren: {
             wert: '',
-            attr: [
             punkte: '',
+            attr: [
               'AUS',
               'WIL'
             ]
@@ -149,8 +149,8 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = 
           },
           handwerk: {
             wert: '',
-            attr: [
             punkte: '',
+            attr: [
               'KON',
               'VER'
             ]
@@ -189,8 +189,8 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = 
           },
           naturkunde: {
             wert: '',
-            attr: [
             punkte: '',
+            attr: [
               'INT',
               'VER'
             ]
@@ -221,8 +221,8 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = 
           },
           seefahrt: {
             wert: '',
-            attr: [
             punkte: '',
+            attr: [
               'BEW',
               'KON'
             ]
@@ -243,7 +243,7 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = 
               'BEW'
             ]
           },
-          Ueberleben: {
+          ueberleben: {
             wert: '',
             punkte: '',
             attr: [
@@ -451,7 +451,8 @@ var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = 
             desc: 'Nicht genug/zu viele Einträge'
           };
         }
-        __charakter.schild[name] = schildObjekt;
+        schildObjekt.name = name;
+        __charakter.schild= schildObjekt;
       },
       /**
 	 * Erwartet einen Namen und ein Objekt in der form:
