@@ -2,3 +2,5 @@ cache/**
 build/**
 **/node_modules/**
 node_modules/**
+src/APPINFO.js
+dist/APPINFO.js
