@@ -52,7 +52,8 @@ var pdfFiller   = require('pdffiller'),
 				} else {
 					return "";
 				}
-			},mapTemplate = function(data){
+			},
+			mapTemplate = function(data){
 				var iterator = 1,
 					map = {
 					"Name": data.name,
@@ -357,14 +358,19 @@ var pdfFiller   = require('pdffiller'),
 					"Vermögen_5":"",
 					"Solare":"",
 					
+					"MerkmaleSTÄ":"",
 					"GW_temp":""
 				},
 				 maxWaffe = 4,
-				 maxZauber = 8,
+				 maxZauber = 15,
 				 maxStaerken = 9,
 				 maxAusruestung = 9,
 				 maxRuestung = 4,
-				 maxMagieschule = 6;
+				 maxMagieschule = 6,
+				 ruestung_gesamt_vtd = 0,
+				 ruestung_gesamt_sr = 0,
+				 ruestung_gesamt_beh = 0,
+				 ruestung_gesamt_ticks = 0;
 				  
 				//Über Waffen iterieren 
 			iterator = 1;
@@ -414,12 +420,13 @@ var pdfFiller   = require('pdffiller'),
 				});
 				if(iterator<maxMagieschule){
 					for(;iterator<=maxMagieschule;iterator++){
-						map["Magieschule_"+iterator] = i;
+						map["Magieschule_"+iterator] = "";
 						map["Magieschule_"+iterator+"_Wert"] = "";
 						map["Magieschule_"+iterator+"_Punkte"] = "";
 						map["Magieschule_"+iterator+"_Att1"] = "";
 						map["Magieschule_"+iterator+"_Att2"] = "";
 						map["Magieschule_"+iterator+"_mod"] = "";
+					}
 				}
 				
 				//Staerken
@@ -430,8 +437,9 @@ var pdfFiller   = require('pdffiller'),
 				});
 				if(iterator<maxStaerken){
 					for(;iterator<=maxStaerken;iterator++){
-					map["StärkenRow"+iterator] = "";
-					map["WirkungRow"+iterator] = "";
+						map["StärkenRow"+iterator] = "";
+						map["WirkungRow"+iterator] = "";
+					}
 				}
 			//Ausruestung
 				var ausruestung_9 = _.clone(data.ausruestung, true);
@@ -444,8 +452,9 @@ var pdfFiller   = require('pdffiller'),
 				});
 				if(iterator<maxAusruestung){
 					for(;iterator<=maxAusruestung;iterator++){
-					map["StärkenRow"+iterator] = "";
-					map["WirkungRow"+iterator] = "";
+						map["StärkenRow"+iterator] = "";
+						map["WirkungRow"+iterator] = "";
+					}
 				}
 				//die anderen neun
 				iterator=1;
@@ -455,239 +464,86 @@ var pdfFiller   = require('pdffiller'),
 				});
 				if(iterator<maxAusruestung){
 					for(;iterator<=maxAusruestung;iterator++){
-					map["StärkenRow"+iterator+"_2"] = "";
-					map["WirkungRow"+iterator+"_2"] = "";
+						map["StärkenRow"+iterator+"_2"] = "";
+						map["WirkungRow"+iterator+"_2"] = "";
+					}
 				}
 				//Rüstungen
 				iterator = 1;
-				var ruestung_gesamt_vtd = 0,
-					ruestung_gesamt_sr = 0,
-					ruestung_gesamt_ticks = 0,
-					ruestung_gesamt_beh = 0;
 				_.each(data.ruestung, function(item,i){
 					map["RüstungenRow"+iterator] = i;
 					map["VTDRow"+iterator] = item.vtd_plus;
+					ruestung_gesamt_vtd += item.vtd_plus;
 					map["SRRow"+iterator] = item.sr;
+					ruestung_gesamt_sr += item.sr;
 					map["BehRow"+iterator] = item.beh;
+					ruestung_gesamt_beh += item.beh;
 					map["TickRow"+iterator] = item.tick_plus;
+					ruestung_gesamt_ticks += item.tick_plus;
 				});
 				if(iterator<maxRuestung){
 					for(;iterator<=maxRuestung;iterator++){
-					map["RüstungenRow"+iterator] = "";
-					map["VTDRow"+iterator] = "";
-					map["SRRow"+iterator] = "";
-					map["BehRow"+iterator] = "";
-					map["TickRow"+iterator] = "";
+						map["RüstungenRow"+iterator] = "";
+						map["VTDRow"+iterator] = "";
+						map["SRRow"+iterator] = "";
+						map["BehRow"+iterator] = "";
+						map["TickRow"+iterator] = "";
+					}
 				}
-			}
-			
-/*							
-					"MerkmaleSTÄ":"",
-					
-					"RüstungenRow1": __getColumnOfRow(0,0,data.ruestung),
-					"VTDRow1": __getColumnOfRow(0,1,data.ruestung),
-					"SRRow1": __getColumnOfRow(0,2,data.ruestung),
-					"BehRow1": __getColumnOfRow(0,3,data.ruestung),
-					"TickRow1": __getColumnOfRow(0,4,data.ruestung),
-					"RüstungenRow2": __getColumnOfRow(1,0,data.ruestung),
-					"VTDRow2": __getColumnOfRow(1,1,data.ruestung),
-					"SRRow2": __getColumnOfRow(1,2,data.ruestung),
-					"BehRow2": __getColumnOfRow(1,3,data.ruestung),
-					"TickRow2": __getColumnOfRow(1,4,data.ruestung),
-					"RüstungenRow3": __getColumnOfRow(2,0,data.ruestung),
-					"VTDRow3": __getColumnOfRow(2,1,data.ruestung),
-					"SRRow3": __getColumnOfRow(2,2,data.ruestung),
-					"BehRow3": __getColumnOfRow(2,3,data.ruestung),
-					"TickRow3": __getColumnOfRow(2,4,data.ruestung),
-					"RüstungenRow4": __getColumnOfRow(3,0,data.ruestung),
-					"VTDRow4": __getColumnOfRow(3,1,data.ruestung),
-					"SRRow4": __getColumnOfRow(3,2,data.ruestung),
-					"BehRow4": __getColumnOfRow(3,3,data.ruestung),
-					"TickRow4": __getColumnOfRow(3,4,data.ruestung),
-					
-					"VTDSumme": __getSumOfColumn(1,data.ruestung),
-					"SRSumme": __getSumOfColumn(2,data.ruestung),
-					"BehSumme": __getSumOfColumn(3,data.ruestung),
-					"TickSumme": __getSumOfColumn(4,data.ruestung),
-					/*
-					"ZauberRow1":"",
-					"SchuleRow1":"",
-					"GradRow1":"",
-					"SchwRow1":"",
-					"FokusRow1":"",
-					"ZDRow1":"",
-					"RWRow1":"",
-					"WDRow1":"",
-					"VerstärkungRow1":"",
-					"SeiteRow1":"",
-					"Kan PktRow1":"",
-					"ZauberRow2":"",
-					"SchuleRow2":"",
-					"GradRow2":"",
-					"SchwRow2":"",
-					"FokusRow2":"",
-					"ZDRow2":"",
-					"RWRow2":"",
-					"WDRow2":"",
-					"VerstärkungRow2":"",
-					"SeiteRow2":"",
-					"Kan PktRow2":"",
-					"ZauberRow3":"",
-					"SchuleRow3":"",
-					"GradRow3":"",
-					"SchwRow3":"",
-					"FokusRow3":"",
-					"ZDRow3":"",
-					"RWRow3":"",
-					"WDRow3":"",
-					"VerstärkungRow3":"",
-					"SeiteRow3":"",
-					"Kan PktRow3":"",
-					"ZauberRow4":"",
-					"SchuleRow4":"",
-					"GradRow4":"",
-					"SchwRow4":"",
-					"FokusRow4":"",
-					"ZDRow4":"",
-					"RWRow4":"",
-					"WDRow4":"",
-					"VerstärkungRow4":"",
-					"SeiteRow4":"",
-					"Kan PktRow4":"",
-					"ZauberRow5":"",
-					"SchuleRow5":"",
-					"GradRow5":"",
-					"SchwRow5":"",
-					"FokusRow5":"",
-					"ZDRow5":"",
-					"RWRow5":"",
-					"WDRow5":"",
-					"VerstärkungRow5":"",
-					"SeiteRow5":"",
-					"Kan PktRow5":"",
-					"ZauberRow6":"",
-					"SchuleRow6":"",
-					"GradRow6":"",
-					"SchwRow6":"",
-					"FokusRow6":"",
-					"ZDRow6":"",
-					"RWRow6":"",
-					"WDRow6":"",
-					"VerstärkungRow6":"",
-					"SeiteRow6":"",
-					"Kan PktRow6":"",
-					"ZauberRow7":"",
-					"SchuleRow7":"",
-					"GradRow7":"",
-					"SchwRow7":"",
-					"FokusRow7":"",
-					"ZDRow7":"",
-					"RWRow7":"",
-					"WDRow7":"",
-					"VerstärkungRow7":"",
-					"SeiteRow7":"",
-					"Kan PktRow7":"",
-					"ZauberRow8":"",
-					"SchuleRow8":"",
-					"GradRow8":"",
-					"SchwRow8":"",
-					"FokusRow8":"",
-					"ZDRow8":"",
-					"RWRow8":"",
-					"WDRow8":"",
-					"VerstärkungRow8":"",
-					"SeiteRow8":"",
-					"Kan PktRow8":"",
-					"ZauberRow9":"",
-					"SchuleRow9":"",
-					"GradRow9":"",
-					"SchwRow9":"",
-					"FokusRow9":"",
-					"ZDRow9":"",
-					"RWRow9":"",
-					"WDRow9":"",
-					"VerstärkungRow9":"",
-					"SeiteRow9":"",
-					"Kan PktRow9":"",
-					"ZauberRow10":"",
-					"SchuleRow10":"",
-					"GradRow10":"",
-					"SchwRow10":"",
-					"FokusRow10":"",
-					"ZDRow10":"",
-					"RWRow10":"",
-					"WDRow10":"",
-					"VerstärkungRow10":"",
-					"SeiteRow10":"",
-					"Kan PktRow10":"",
-					"ZauberRow11":"",
-					"SchuleRow11":"",
-					"GradRow11":"",
-					"SchwRow11":"",
-					"FokusRow11":"",
-					"ZDRow11":"",
-					"RWRow11":"",
-					"WDRow11":"",
-					"VerstärkungRow11":"",
-					"SeiteRow11":"",
-					"Kan PktRow11":"",
-					"ZauberRow12":"",
-					"SchuleRow12":"",
-					"GradRow12":"",
-					"SchwRow12":"",
-					"FokusRow12":"",
-					"ZDRow12":"",
-					"RWRow12":"",
-					"WDRow12":"",
-					"VerstärkungRow12":"",
-					"SeiteRow12":"",
-					"Kan PktRow12":"",
-					"ZauberRow13":"",
-					"SchuleRow13":"",
-					"GradRow13":"",
-					"SchwRow13":"",
-					"FokusRow13":"",
-					"ZDRow13":"",
-					"RWRow13":"",
-					"WDRow13":"",
-					"VerstärkungRow13":"",
-					"SeiteRow13":"",
-					"Kan PktRow13":"",
-					"ZauberRow14":"",
-					"SchuleRow14":"",
-					"GradRow14":"",
-					"SchwRow14":"",
-					"FokusRow14":"",
-					"ZDRow14":"",
-					"RWRow14":"",
-					"WDRow14":"",
-					"VerstärkungRow14":"",
-					"SeiteRow14":"",
-					"Kan PktRow14":"",
-					"ZauberRow15":"",
-					"SchuleRow15":"",
-					"GradRow15":"",
-					"SchwRow15":"",
-					"FokusRow15":"",
-					"ZDRow15":"",
-					"RWRow15":"",
-					"WDRow15":"",
-					"VerstärkungRow15":"",
-					"SeiteRow15":"",
-					"Kan PktRow15":"",
-					*/
+				iterator = 1;
+				_.each(data.zauber, function(item,i){
+					map["ZauberRow"+iterator] = i;
+					map["SchuleRow"+iterator] = item.schule
+					map["GradRow"+iterator] = item.grad
+					map["SchwRow"+iterator] = item.schw
+					map["FokusRow"+iterator] = item.fokus
+					map["ZDRow"+iterator] = item.zd
+					map["RWRow"+iterator] = item.rw
+					map["WDRow"+iterator] = item.wd
+					map["VerstärkungRow"+iterator] = item.verstaerkung
+					map["SeiteRow"+iterator] = item.seite
+					map["Kan PktRow"+iterator] = "";
+				});
 				
+				if(iterator<maxRuestung){
+					for(;iterator<=maxRuestung;iterator++){
+						map["ZauberRow"+iterator] = "";
+						map["SchuleRow"+iterator] = "";
+						map["GradRow"+iterator] = "";
+						map["SchwRow"+iterator] = "";
+						map["FokusRow"+iterator] = "";
+						map["ZDRow"+iterator] = "";
+						map["RWRow"+iterator] = "";
+						map["WDRow"+iterator] = "";
+						map["VerstärkungRow"+iterator] = "";
+						map["SeiteRow"+iterator] = "";
+						map["Kan PktRow"+iterator] = "";
+					}
+				}
+				
+			return map;
+			
 			}, writeData = function(data, name){
-				var destFile = path.join(destPDFPath, 'Splittermond_Charakterbogen_'+name+'.pdf');
-				pdfFiller.fillForm(formFile, destFile, data, function(err){});
-			};
+				var def = q.defer();
+				destFile = path.join(destPDFPath, 'Splittermond_Charakterbogen_'+name+'.pdf');
+				pdfFiller.fillForm(formFile, destFile, data, function(err){
+					if(err) { def.reject(err)}
+					def.resolve();
+				});
+				return def.promise;
+			}, exportPDF = function(charakter){
+				fdfTemplate = mapTemplate(charakter);
+				return writeData(fdfTemplate, charakter.name);
+				
+			}
 
 		checkDirectory();
 		
 		return{
 			getTemplate : getTemplate,
 			mapTemplate : mapTemplate,
-			writeData : writeData
+			writeData : writeData,
+			exportPDF : exportPDF
 		}
 	};
 	

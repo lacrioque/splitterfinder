@@ -23,14 +23,7 @@
         </div>
         <div layout="row" flex ng-controller="sidenavCtrl">
             <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left" md-is-locked-open="$mdMedia('gt-lg')">
-                <md-button class="md-accent">Neu</md-button>
-                <md-button class="md-accent">Laden</md-button>
-                <md-button class="md-accent">Charakter ändern</md-button>
-                <md-button class="md-accent">Erfahrung einsetzen</md-button>
-                <md-button class="md-accent">Import</md-button>
-                <md-button class="md-accent">Export</md-button>
-                <md-button ng-show="is_admin_active()" class="md-accent">Admin</md-button>
-                <md-button class="md-accent">Einstellungen</md-button>
+                <md-button ng-repeat='button in buttons' ng-href='{{button.href}}' class="md-accent">{{button.bezeichnung}}</md-button>
             </md-sidenav>
         <div layout="column" ng-view flex></div>
         </div>

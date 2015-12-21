@@ -11,6 +11,10 @@ var encryption = require('./encryption.js'), path = require('path'), neDB = requ
           def.resolve(encryption.decrypt(document.modul));
         });
         return def.promise;
+      }, getModuleIndex = function () {
+        dbModule.find({},{ bezeichnung: 1, kategorie: 1 }, function (err, document) {
+          def.resolve(encryption.decrypt(document));
+        });
       }, getCharakter = function (charakterID, secure) {
         secure = secure || true;
         var def = q.defer();

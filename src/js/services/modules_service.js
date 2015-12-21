@@ -1,8 +1,3 @@
-/*globals angular, console, window, q, _ */
-angular.module('splitterfinder.services', [
-	'splitterfinder.services.stubService',
-	'splitterfinder.services.moduleService'
-	]);
 /*globals angular, console, window, q, _^, database */
 angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ', function () {
   return function () {
@@ -30,11 +25,5 @@ angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ
           getModuleIndex: getModuleIndex
         }
         
-  };
-});
-/*globals angular, console, window, q, _ */
-angular.module('splitterfinder.services.stubService', []).factory('stubService', function () {
-  return function () {
-    console.log('stub');
   };
 });

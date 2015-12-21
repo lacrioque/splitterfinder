@@ -2,17 +2,25 @@
  * Berechnet verschiedene Dinge, z.B. abgeleitete Werte, Kampfwerte o.ä. 
  */
 var math = require('mathjs'), 
+	_ = require('lodash'),
 	calculate = function(){
-		var abgeleiteteWerte = function(__charakter){
+		var __replaceAttributes = function(attribute, attributArray){
+			var newArray = [];
+				_.each(attributArray, function(item,i){
+					newArray.push(attributArray[item]);
+				});
+				return newArray;
+			},
+			abgeleiteteWerte = function(__charakter){
 			var abgeleitet = {
-				GK: '',
-				GSW: '',
-				INI: '',
-				LP: '',
-				FO: '',
-				VTD: '',
-				GW: '',
-				KW: ''
+				GK: 0,
+				GSW: 0,
+				INI: 0,
+				LP: 0,
+				FO: 0,
+				VTD: 0,
+				GW: 0,
+				KW: 0
 			};
 			switch(__charakter.rasse.toLowerCase()){
 				case 'varg': abgeleitet.GK = 6; break;
@@ -32,12 +40,24 @@ var math = require('mathjs'),
 			abgeleitet.KW = ( 12 + __charakter.attribute.KON + __charakter.attribute.WIL );
 			
 		},
-			waffenWerte = function(__charakter){
+			fertigkeitenBerechnen = function(__charakter){
+				_.each(__charakter.fertigkeiten, function(item, i){
+					var attribute = __replaceAttributes(__charakter.attribute, item.attr);
+					__charakter.fertigkeiten[i].attr = attribute;
+				});
 		},
-			temporary = null;
+			waffenWerte = function(__charakter){
+				_.each(__charakter.waffen, function(item, i){
+					var attribute = __replaceAttributes(__charakter.attribute, item.attr);
+					__charakter.waffen[i].attr = attribute;
+				});
+		};
+		
 		return {
 			abgeleiteteWerte : abgeleiteteWerte,
-			waffenWerte : waffenWerte
+			waffenWerte : waffenWerte,
+			fertigkeitenBerechnen : fertigkeitenBerechnen
 		};
 	};
 	
+	module.exports = calculate();
