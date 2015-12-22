@@ -1,40 +1,64 @@
-  <md-content class="md-padding" flex layout-fill>
+  <md-content class="md-padding" flex layout='column'>
     <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="bottom" flex layout-fill>
       <md-tab id="basis">
         <md-tab-label>Grundlagen</md-tab-label>
         <md-tab-body>
+           <md-input-container>
          	<label>Name</label>
 			 <input type='text' ng-model='charakter.name' placeholder='{{randomName()}}' />
+           </md-input-container>
+           <md-input-container>
 			 <label>Rasse</label>
-			 <select name='rasse' id='charakter_rasse' ng-model='charakter.rasse' ng-change="rerollName()">
-				<option ng-repeat="rasse in rassenauswahl" value='rasse.value'>{{rasse.bezeichnung}}</option>	 
-			 </select>
+                <md-select name='rasse' id='charakter_rasse' ng-model='charakter.rasse' ng-change="rerollName()">
+                    <option ng-repeat="rasse in rassenauswahl" value='rasse.value'>{{rasse.bezeichnung}}</option>	 
+                </md-select>
+            </md-input-container>
         </md-tab-body>
       </md-tab>
       <md-tab id="modulauswahl">
         <md-tab-label>Modulauswahl</md-tab-label>
         <md-tab-body>
-          <div layout='column' layout-gt-lg='row' flex layout-fill>
-            <div class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
+          <div layout='column' flex layout-fill>
+            <md-input-container class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
               <label>Kultur</label>
-              <select name='modul_kategorie_kultur' id='kulturselect' ng-options='kultur as kultur.bezeichnung for kultur in kulturen' ></select>
-            </div>
-            <div class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
+              <md-select name='modul_kategorie_kultur' id='kulturselect' ng-options='kultur as kultur.bezeichnung for kultur in kulturen' ></md-select>
+            </md-input-container>
+            <md-input-container class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
               <label>Ausbildung</label>
-              <select name='modul_kategorie_ausbildung' id='ausbildungselect' ng-options='ausbildung as ausbildung.bezeichnung for ausbildung in ausbildungen' ></select>
-            </div>
-            <div class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
+              <md-select name='modul_kategorie_ausbildung' id='ausbildungselect' ng-options='ausbildung as ausbildung.bezeichnung for ausbildung in ausbildungen' ></md-select>
+            </md-input-container>
+            <md-input-container class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
               <label>Abstammung</label>
-              <select name='modul_kategorie_abstammung' id='abstammungselect' ng-options='abstammung as abstammung.bezeichnung for abstammung in abstammungen' ></select>
-            </div>
+              <md-select name='modul_kategorie_abstammung' id='abstammungselect' ng-options='abstammung as abstammung.bezeichnung for abstammung in abstammungen' ></md-select>
+            </md-input-container>
           </div>
         </md-tab-body>
       </md-tab>
-      <md-tab id="tab3">
-        <md-tab-label>Item Three</md-tab-label>
+      <md-tab id="splitterzeichen">
+        <md-tab-label>Splitterzeichen</md-tab-label>
         <md-tab-body>
-          View for Item #3 <br/>
-          data.selectedIndex = 2;
+          <md-input-container>
+			 <label>Mondsplitter</label>
+                <md-select name='mondsplitter' id='charakter_mondzeichen' ng-model='charakter.mondzeichen' ng-change='splitter_image()'>
+                    <option ng-repeat="splitter in mondplitter" value='splitter'>{{splitter}}</option>	 
+                </md-select>
+            </md-input-container>
+            <div layout='row' flex>
+                <img ng-src='{{mondzeichen.image}}' alt='{{mondzeichen.name}}' />
+            </div>
+        </md-tab-body>
+        <md-tab id="freie_verteilung" ng-disabled="auswahl_unvollstaendig">
+        <md-tab-label>Freie Punkte</md-tab-label>
+        <md-tab-body>
+          <md-input-container>
+			 <label>Stärken</label>
+                <md-select name='mondsplitter' id='charakter_mondzeichen' ng-model='charakter.mondzeichen' ng-change='splitter_image()'>
+                    <option ng-repeat="splitter in mondplitter" value='splitter'>{{splitter}}</option>	 
+                </md-select>
+            </md-input-container>
+            <div layout='row' flex>
+                <img ng-src='{{mondzeichen.image}}' alt='{{mondzeichen.name}}' />
+            </div>
         </md-tab-body>
       </md-tab>
     </md-tabs>
