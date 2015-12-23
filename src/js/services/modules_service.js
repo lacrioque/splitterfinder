@@ -9,8 +9,8 @@ angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ
         decryptModule = function(moduleCrypt){
           
         },
-        saveModule = function(module){
-          
+        saveModule = function(module, id){
+            id = id || false;
         },
         getModuleIndex = function(){
           database.getModuleIndex().then(function(indexM){
