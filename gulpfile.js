@@ -70,7 +70,7 @@ if(linux || all){
 
 gulp.task('default', function(done){'beautifySrc', runSequence(['concat', 'versioning'], 'collect-dist', 'install-deps', done);});
 
-gulp.task('concat', ['services','controller', 'css']);
+gulp.task('concat', ['services','controller', 'directives','css']);
 
 gulp.task('build', function(done){runSequence('default', 'nw', done);});
 
@@ -116,6 +116,12 @@ gulp.task('controller', function(done){
     .pipe(concat('all_controller.js'))
     .pipe(gulp.dest('./src/js/'));
     
+});
+
+gulp.task('directives', function(done){
+    return gulp.src('./src/js/directives/*.js')
+    .pipe(concat('all_directives.js'))
+    .pipe(gulp.dest('./src/js/'));
 });
 
 gulp.task('css', function(){

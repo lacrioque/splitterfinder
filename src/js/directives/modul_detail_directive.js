@@ -21,14 +21,22 @@ angular.module('splitterfinder.directives.modulDetailDirective', []).controller(
                     .ariaLabel('Löschen?')
                     .ok("Ja, löschen")
                     .cancel('Abbrechen');
-                  $mdDialog.show(confirm).then(function() { 
-                        $moduleServ.deleteModule(module, module.id);
-                        $mdToast.show(
-                            $mdToast.simple()
-                                .textContent('Gelöscht')
-                                .position($scope.getToastPosition())
-                                .hideDelay(3000)
-                            );
+                  $mdDialog.show(confirmDialog).then(function() { 
+                        $moduleServ.deleteModule(module, module.id, function(returner){
+                            $mdToast.show(
+                                $mdToast.simple()
+                                    .textContent('Gelöscht')
+                                    .position($scope.getToastPosition())
+                                    .hideDelay(3000)
+                                );
+                        }, function(error){
+                            $mdToast.show(
+                                $mdToast.simple()
+                                    .textContent('Es ist ein Fehler aufgetreten: ' + error)
+                                    .position($scope.getToastPosition())
+                                    .hideDelay(3000)
+                                );
+                        });
                     }, function(){
                         $mdToast.show(
                             $mdToast.simple()
