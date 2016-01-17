@@ -1,27 +1,40 @@
+ <div layout='row'>
  <md-content layout-fill flex>
     <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="Ansicht">
-        <md-content class="md-padding">
-        	<md-toolbar md-scroll-shrink ng-if="true" ng-controller="TitleController">
-				<div class="md-toolbar-tools">
-				<h3>
-					<span>Module - Ansicht</span>
-				</h3>
+      <md-tab id="Ansicht">
+		<md-tab-label>Ansicht</md-tab-label>
+		<md-tab-body>
+			<md-content class="md-padding">
+				<md-toolbar md-scroll-shrink ng-controller="TitleController">
+					<div class="md-toolbar-tools">
+					<h3>
+						<span>Module - Ansicht</span>
+					</h3>
+					</div>
+				</md-toolbar>
+				<div layout='row' ng-repeat=''>
+					blabla content blabla
 				</div>
-			</md-toolbar>
-			<div layout='row' ng-repeat=''></div>
-		</md-content>
+			</md-content>
+		</md-tab-body>
       </md-tab>
-      <md-tab label="Neu">
-        <md-content class="md-padding">
-        	<md-toolbar md-scroll-shrink ng-if="true" ng-controller="TitleController">
-				<div class="md-toolbar-tools">
-				<h3>
-					<span>Module - Ansicht</span>
-				</h3>
+      <md-tab id="Neu">
+		<md-tab-label>Neu</md-tab-label>
+		<md-tab-body>
+			<md-content class="md-padding">
+				<md-toolbar md-scroll-shrink ng-controller="TitleController">
+					<div class="md-toolbar-tools">
+					<h3>
+						<span>Module - Ansicht</span>
+					</h3>
+					</div>
+				</md-toolbar>
+				<div layout='row' ng-repeat=''>
+					blabla content blabla
 				</div>
-			</md-toolbar>
-        </md-content>
+			</md-content>
+		</md-tab-body>
       </md-tab>
     </md-tabs>
   </md-content>
+  </div>

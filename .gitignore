@@ -4,3 +4,4 @@ build/**
 node_modules/**
 src/APPINFO.js
 dist/APPINFO.js
+dist/*

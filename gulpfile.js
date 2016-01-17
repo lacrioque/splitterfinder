@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
     fixmyjs = require('gulp-fixmyjs'),
 	sh = require('shelljs'),
+    rimraf = require('rimraf'),
     fs = require('fs'),
     async = require('async'),
     path = require('path'),
@@ -68,7 +69,7 @@ if(linux || all){
 }
 
 
-gulp.task('default', function(done){'beautifySrc', runSequence(['concat', 'versioning'], 'collect-dist', 'install-deps', done);});
+gulp.task('default', function(done){'clearDist', runSequence(['concat', 'versioning'], 'collect-dist', 'install-deps', done);});
 
 gulp.task('concat', ['services','controller', 'directives','css']);
 
@@ -104,8 +105,16 @@ gulp.task('beautifySrc', function(done){
         }], done);
 });
 
+gulp.task('clearDist', function(done){
+   rimraf('./dist/*', done); 
+});
+
 gulp.task('services', function(done){
     return gulp.src('./src/js/services/*.js')
+    .pipe(fixmyjs({
+                globals : "angular, module, require, console",
+                node : true
+            }))
     .pipe(concat('all_services.js'))
     .pipe(gulp.dest('./src/js/'));
     
@@ -113,6 +122,10 @@ gulp.task('services', function(done){
 
 gulp.task('controller', function(done){
     return gulp.src('./src/js/controller/*.js')
+    .pipe(fixmyjs({
+                globals : "angular, module, require, console",
+                node : true
+            }))
     .pipe(concat('all_controller.js'))
     .pipe(gulp.dest('./src/js/'));
     
@@ -120,6 +133,10 @@ gulp.task('controller', function(done){
 
 gulp.task('directives', function(done){
     return gulp.src('./src/js/directives/*.js')
+    .pipe(fixmyjs({
+                globals : "angular, require, console",
+                node : true
+            }))
     .pipe(concat('all_directives.js'))
     .pipe(gulp.dest('./src/js/'));
 });

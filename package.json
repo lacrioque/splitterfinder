@@ -1,4 +1,7 @@
 {
+  "repository": "",
+  "name": "splitterfinder",
+  "licence": "MIT",
   "devDependencies": {
     "async": "^1.5.0",
     "bower": "^1.6.5",
@@ -7,10 +10,12 @@
     "gulp-concat": "^2.6.0",
     "gulp-fixmyjs": "^1.0.2",
     "gulp-install": "^0.6.0",
+    "gulp-jasmine": "^2.2.1",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "gulp-webserver": "^0.9.1",
+    "jasmine": "^2.4.1",
     "run-sequence": "^1.1.5",
     "shelljs": "^0.5.3",
     "yargs": "^3.30.0"

@@ -3,7 +3,24 @@ angular.module('splitterfinder.controller', [
   'splitterfinder.controller.mainController',
   'splitterfinder.controller.mainViewController',
   'splitterfinder.controller.sidenavController',
-  'splitterfinder.controller.newCharController'
+  'splitterfinder.controller.newCharController',
+  'splitterfinder.controller.adminController'
+]);
+/*globals angular, console, window, q, _ */
+angular.module('splitterfinder.controller.adminController', []).controller('adminCtrl', [
+  '$scope',
+  '$rootScope',
+  '$moduleServ',
+  function ($scope, $rootScope, $moduleServ) {
+    var module = {}, moduleListe = {};
+    //$moduleServ.getModuleList();
+    console.log($moduleServ);
+    _.each(module, function (item, i) {
+      $moduleServ.getModule(item.bezeichnung).then(function (modul) {
+        module[modul.name] = modul;
+      });
+    });
+  }
 ]);
 /*globals angular, console, window, q, _ */
 angular.module('splitterfinder.controller.mainController', []).controller('mainCtrl', [
@@ -40,7 +57,7 @@ angular.module('splitterfinder.controller.newCharController', []).controller('ne
   '$scope',
   '$rootScope',
   function ($scope, $rootScope) {
-	  $rootScope.$emit('changeDestination', { name: 'Neuer Charakter' });
+    $rootScope.$emit('changeDestination', { name: 'Neuer Charakter' });
   }
 ]);
 /*globals angular, console, window, q, _ */
@@ -49,13 +66,38 @@ angular.module('splitterfinder.controller.sidenavController', []).controller('si
   '$rootScope',
   function ($scope, $rootScope) {
     var buttons = [
-      {href: '#new', bezeichnung: 'Neu'},
-      {href: '#laden', bezeichnung: 'Laden'},
-      {href: '#edit', bezeichnung: 'Charakter ändern'},
-      {href: '#experience', bezeichnung: 'Erfahrung einsetzen'},
-      {href: '#import', bezeichnung: 'Import'},
-      {href: '#export', bezeichnung: 'exports'},
-      {href: '#einstellungen', bezeichnung: 'Einstellungen'}
+      {
+        href: '#new',
+        bezeichnung: 'Neu'
+      },
+      {
+        href: '#laden',
+        bezeichnung: 'Laden'
+      },
+      {
+        href: '#edit',
+        bezeichnung: 'Charakter ändern'
+      },
+      {
+        href: '#admin',
+        bezeichnung: 'Administration'
+      },
+      {
+        href: '#experience',
+        bezeichnung: 'Erfahrung einsetzen'
+      },
+      {
+        href: '#import',
+        bezeichnung: 'Import'
+      },
+      {
+        href: '#export',
+        bezeichnung: 'exports'
+      },
+      {
+        href: '#einstellungen',
+        bezeichnung: 'Einstellungen'
+      }
     ];
     $scope.buttons = buttons;
   }

@@ -1,1063 +1,766 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
-1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'update',
+1 verbose cli [ '/opt/nodejs/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'jasmine',
 1 verbose cli   '-g' ]
-2 info using npm@2.14.7
-3 info using node@v4.2.0
-4 silly mapToRegistry name q
-5 silly mapToRegistry using default registry
-6 silly mapToRegistry registry https://registry.npmjs.org/
-7 silly mapToRegistry uri https://registry.npmjs.org/q
-8 silly mapToRegistry name vinyl
-9 silly mapToRegistry using default registry
-10 silly mapToRegistry registry https://registry.npmjs.org/
-11 silly mapToRegistry uri https://registry.npmjs.org/vinyl
-12 silly mapToRegistry name yargs
-13 silly mapToRegistry using default registry
-14 silly mapToRegistry registry https://registry.npmjs.org/
-15 silly mapToRegistry uri https://registry.npmjs.org/yargs
-16 silly mapToRegistry name bower
-17 silly mapToRegistry using default registry
-18 silly mapToRegistry registry https://registry.npmjs.org/
-19 silly mapToRegistry uri https://registry.npmjs.org/bower
-20 silly mapToRegistry name cordova
-21 silly mapToRegistry using default registry
-22 silly mapToRegistry registry https://registry.npmjs.org/
-23 silly mapToRegistry uri https://registry.npmjs.org/cordova
-24 silly mapToRegistry name fixmyjs
-25 silly mapToRegistry using default registry
-26 silly mapToRegistry registry https://registry.npmjs.org/
-27 silly mapToRegistry uri https://registry.npmjs.org/fixmyjs
-28 silly mapToRegistry name gulp
-29 silly mapToRegistry using default registry
-30 silly mapToRegistry registry https://registry.npmjs.org/
-31 silly mapToRegistry uri https://registry.npmjs.org/gulp
-32 silly mapToRegistry name node-sass
-33 silly mapToRegistry using default registry
-34 silly mapToRegistry registry https://registry.npmjs.org/
-35 silly mapToRegistry uri https://registry.npmjs.org/node-sass
-36 silly mapToRegistry name nodeunit
-37 silly mapToRegistry using default registry
-38 silly mapToRegistry registry https://registry.npmjs.org/
-39 silly mapToRegistry uri https://registry.npmjs.org/nodeunit
-40 silly mapToRegistry name nw-builder
-41 silly mapToRegistry using default registry
-42 silly mapToRegistry registry https://registry.npmjs.org/
-43 silly mapToRegistry uri https://registry.npmjs.org/nw-builder
-44 silly mapToRegistry name uglify-js
-45 silly mapToRegistry using default registry
-46 silly mapToRegistry registry https://registry.npmjs.org/
-47 silly mapToRegistry uri https://registry.npmjs.org/uglify-js
-48 silly mapToRegistry name vs-tac
-49 silly mapToRegistry using default registry
-50 silly mapToRegistry registry https://registry.npmjs.org/
-51 silly mapToRegistry uri https://registry.npmjs.org/vs-tac
-52 silly mapToRegistry name copy-paste
-53 silly mapToRegistry using default registry
-54 silly mapToRegistry registry https://registry.npmjs.org/
-55 silly mapToRegistry uri https://registry.npmjs.org/copy-paste
-56 silly mapToRegistry name grunt
-57 silly mapToRegistry using default registry
-58 silly mapToRegistry registry https://registry.npmjs.org/
-59 silly mapToRegistry uri https://registry.npmjs.org/grunt
-60 silly mapToRegistry name gulp-shell
-61 silly mapToRegistry using default registry
-62 silly mapToRegistry registry https://registry.npmjs.org/
-63 silly mapToRegistry uri https://registry.npmjs.org/gulp-shell
-64 silly mapToRegistry name gulp-util
-65 silly mapToRegistry using default registry
-66 silly mapToRegistry registry https://registry.npmjs.org/
-67 silly mapToRegistry uri https://registry.npmjs.org/gulp-util
-68 silly mapToRegistry name vinyl-fs
-69 silly mapToRegistry using default registry
-70 silly mapToRegistry registry https://registry.npmjs.org/
-71 silly mapToRegistry uri https://registry.npmjs.org/vinyl-fs
-72 silly mapToRegistry name grunt-cli
-73 silly mapToRegistry using default registry
-74 silly mapToRegistry registry https://registry.npmjs.org/
-75 silly mapToRegistry uri https://registry.npmjs.org/grunt-cli
-76 silly mapToRegistry name ionic
-77 silly mapToRegistry using default registry
-78 silly mapToRegistry registry https://registry.npmjs.org/
-79 silly mapToRegistry uri https://registry.npmjs.org/ionic
-80 silly mapToRegistry name jslint
-81 silly mapToRegistry using default registry
-82 silly mapToRegistry registry https://registry.npmjs.org/
-83 silly mapToRegistry uri https://registry.npmjs.org/jslint
-84 silly mapToRegistry name ripple-emulator
-85 silly mapToRegistry using default registry
-86 silly mapToRegistry registry https://registry.npmjs.org/
-87 silly mapToRegistry uri https://registry.npmjs.org/ripple-emulator
-88 silly mapToRegistry name taco-cli
-89 silly mapToRegistry using default registry
-90 silly mapToRegistry registry https://registry.npmjs.org/
-91 silly mapToRegistry uri https://registry.npmjs.org/taco-cli
-92 silly mapToRegistry name uglifycss
-93 silly mapToRegistry using default registry
-94 silly mapToRegistry registry https://registry.npmjs.org/
-95 silly mapToRegistry uri https://registry.npmjs.org/uglifycss
-96 silly mapToRegistry name webpack
-97 silly mapToRegistry using default registry
-98 silly mapToRegistry registry https://registry.npmjs.org/
-99 silly mapToRegistry uri https://registry.npmjs.org/webpack
-100 silly mapToRegistry name weinre
-101 silly mapToRegistry using default registry
-102 silly mapToRegistry registry https://registry.npmjs.org/
-103 silly mapToRegistry uri https://registry.npmjs.org/weinre
-104 verbose request uri https://registry.npmjs.org/vs-tac
-105 verbose request no auth needed
-106 info attempt registry request try #1 at 18:18:26
-107 verbose request id 89613c4fd289d5b8
-108 http request GET https://registry.npmjs.org/vs-tac
-109 verbose request uri https://registry.npmjs.org/q
-110 verbose request no auth needed
-111 info attempt registry request try #1 at 18:18:26
-112 verbose etag "9HHC0GMBV91SEFPCZP7O0NJSX"
-113 http request GET https://registry.npmjs.org/q
-114 verbose request uri https://registry.npmjs.org/fixmyjs
-115 verbose request no auth needed
-116 info attempt registry request try #1 at 18:18:26
-117 verbose etag "A7CB107DH4VJO3VB4W5WU0S8Z"
-118 http request GET https://registry.npmjs.org/fixmyjs
-119 verbose request uri https://registry.npmjs.org/nodeunit
-120 verbose request no auth needed
-121 info attempt registry request try #1 at 18:18:26
-122 verbose etag "4A6V0WG85H4GZ6O6VDC0T99BS"
-123 http request GET https://registry.npmjs.org/nodeunit
-124 verbose request uri https://registry.npmjs.org/gulp
-125 verbose request no auth needed
-126 info attempt registry request try #1 at 18:18:26
-127 verbose etag "7OZ0XRXF19F3443P4N065XM5D"
-128 http request GET https://registry.npmjs.org/gulp
-129 verbose request uri https://registry.npmjs.org/bower
-130 verbose request no auth needed
-131 info attempt registry request try #1 at 18:18:26
-132 verbose etag "EQN2PB16EOH1D5ZHGDF8WLVNG"
-133 http request GET https://registry.npmjs.org/bower
-134 verbose request uri https://registry.npmjs.org/vinyl
-135 verbose request no auth needed
-136 info attempt registry request try #1 at 18:18:26
-137 verbose etag "1Q4JY1RB7KQOBFJZ8NORORUWU"
-138 http request GET https://registry.npmjs.org/vinyl
-139 verbose request uri https://registry.npmjs.org/copy-paste
-140 verbose request no auth needed
-141 info attempt registry request try #1 at 18:18:26
-142 verbose etag "1W0AQ515FI90MKVRCXDZY0DQ2"
-143 http request GET https://registry.npmjs.org/copy-paste
-144 verbose request uri https://registry.npmjs.org/uglify-js
-145 verbose request no auth needed
-146 info attempt registry request try #1 at 18:18:26
-147 verbose etag "6981GGNNJXPBCEW88RJW92ACH"
-148 http request GET https://registry.npmjs.org/uglify-js
-149 verbose request uri https://registry.npmjs.org/grunt
-150 verbose request no auth needed
-151 info attempt registry request try #1 at 18:18:26
-152 verbose etag "349OI3LKYSTSX7NCSYRSBQZEN"
-153 http request GET https://registry.npmjs.org/grunt
-154 verbose request uri https://registry.npmjs.org/gulp-shell
-155 verbose request no auth needed
-156 info attempt registry request try #1 at 18:18:26
-157 verbose etag "A1CKOVE0L5J99497XTWS1SG66"
-158 http request GET https://registry.npmjs.org/gulp-shell
-159 verbose request uri https://registry.npmjs.org/grunt-cli
-160 verbose request no auth needed
-161 info attempt registry request try #1 at 18:18:26
-162 verbose etag "8DF8UKMFFYV0UDQ3DK6BVEBYC"
-163 http request GET https://registry.npmjs.org/grunt-cli
-164 verbose request uri https://registry.npmjs.org/gulp-util
-165 verbose request no auth needed
-166 info attempt registry request try #1 at 18:18:26
-167 verbose etag "65Q0AVS3CFQQ95MMKU4M4KB1I"
-168 http request GET https://registry.npmjs.org/gulp-util
-169 verbose request uri https://registry.npmjs.org/vinyl-fs
-170 verbose request no auth needed
-171 info attempt registry request try #1 at 18:18:26
-172 verbose etag "80VMNUG1SA11CUIZGUW66PYDK"
-173 http request GET https://registry.npmjs.org/vinyl-fs
-174 verbose request uri https://registry.npmjs.org/nw-builder
-175 verbose request no auth needed
-176 info attempt registry request try #1 at 18:18:26
-177 verbose etag "2XRHL5HYD9ETXS2BD84Z2B1ZW"
-178 http request GET https://registry.npmjs.org/nw-builder
-179 verbose request uri https://registry.npmjs.org/ripple-emulator
-180 verbose request no auth needed
-181 info attempt registry request try #1 at 18:18:26
-182 verbose etag "5YPEMGD8WWX645JTP0N3O7R21"
-183 http request GET https://registry.npmjs.org/ripple-emulator
-184 verbose request uri https://registry.npmjs.org/jslint
-185 verbose request no auth needed
-186 info attempt registry request try #1 at 18:18:26
-187 verbose etag "75N5N8GKRJB1WFVVI8M73KAX7"
-188 http request GET https://registry.npmjs.org/jslint
-189 verbose request uri https://registry.npmjs.org/taco-cli
-190 verbose request no auth needed
-191 info attempt registry request try #1 at 18:18:26
-192 verbose etag "8ASUA7VCI4UFQID9Z9P3Z03YE"
-193 http request GET https://registry.npmjs.org/taco-cli
-194 verbose request uri https://registry.npmjs.org/uglifycss
-195 verbose request no auth needed
-196 info attempt registry request try #1 at 18:18:26
-197 verbose etag "4DIZE2FXPHK98X0US0NKPH6E0"
-198 http request GET https://registry.npmjs.org/uglifycss
-199 verbose request uri https://registry.npmjs.org/cordova
-200 verbose request no auth needed
-201 info attempt registry request try #1 at 18:18:26
-202 verbose etag "94F6I3PRPVT2D4T94U8PTC8IG"
-203 http request GET https://registry.npmjs.org/cordova
-204 verbose request uri https://registry.npmjs.org/yargs
-205 verbose request no auth needed
-206 info attempt registry request try #1 at 18:18:26
-207 verbose etag "1C1HPJTMWPL9Z9C45JIUW2S8E"
-208 http request GET https://registry.npmjs.org/yargs
-209 verbose request uri https://registry.npmjs.org/weinre
-210 verbose request no auth needed
-211 info attempt registry request try #1 at 18:18:26
-212 verbose etag "9MJ1YR5K9KFWPZZFKB7UCKY7I"
-213 http request GET https://registry.npmjs.org/weinre
-214 verbose request uri https://registry.npmjs.org/node-sass
-215 verbose request no auth needed
-216 info attempt registry request try #1 at 18:18:26
-217 verbose etag "8JH2A8ZW80KFQBF8U3T3532XQ"
-218 http request GET https://registry.npmjs.org/node-sass
-219 verbose request uri https://registry.npmjs.org/ionic
-220 verbose request no auth needed
-221 info attempt registry request try #1 at 18:18:26
-222 verbose etag "9TCOVT3O5HGME2HTSSKDHGTT6"
-223 http request GET https://registry.npmjs.org/ionic
-224 verbose request uri https://registry.npmjs.org/webpack
-225 verbose request no auth needed
-226 info attempt registry request try #1 at 18:18:26
-227 verbose etag "8KX69CINNGFZ8281MZ78VQGPZ"
-228 http request GET https://registry.npmjs.org/webpack
-229 http 304 https://registry.npmjs.org/vinyl
-230 verbose headers { date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-230 verbose headers   via: '1.1 varnish',
-230 verbose headers   'cache-control': 'max-age=300',
-230 verbose headers   etag: '"1Q4JY1RB7KQOBFJZ8NORORUWU"',
-230 verbose headers   age: '216',
-230 verbose headers   connection: 'keep-alive',
-230 verbose headers   'x-served-by': 'cache-fra1224-FRA',
-230 verbose headers   'x-cache': 'HIT',
-230 verbose headers   'x-cache-hits': '9',
-230 verbose headers   'x-timer': 'S1450718311.260494,VS0,VE0',
-230 verbose headers   vary: 'Accept' }
-231 silly get cb [ 304,
-231 silly get   { date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-231 silly get     via: '1.1 varnish',
-231 silly get     'cache-control': 'max-age=300',
-231 silly get     etag: '"1Q4JY1RB7KQOBFJZ8NORORUWU"',
-231 silly get     age: '216',
-231 silly get     connection: 'keep-alive',
-231 silly get     'x-served-by': 'cache-fra1224-FRA',
-231 silly get     'x-cache': 'HIT',
-231 silly get     'x-cache-hits': '9',
-231 silly get     'x-timer': 'S1450718311.260494,VS0,VE0',
-231 silly get     vary: 'Accept' } ]
-232 verbose etag https://registry.npmjs.org/vinyl from cache
-233 verbose get saving vinyl to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\vinyl\.cache.json
-234 http 200 https://registry.npmjs.org/weinre
-235 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-235 verbose headers   etag: '"D3RHX459H6HCY35CKPX1ZFRH8"',
-235 verbose headers   'content-type': 'application/json',
-235 verbose headers   'cache-control': 'max-age=300',
-235 verbose headers   'content-length': '18629',
-235 verbose headers   'accept-ranges': 'bytes',
-235 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-235 verbose headers   via: '1.1 varnish',
-235 verbose headers   age: '205',
-235 verbose headers   connection: 'keep-alive',
-235 verbose headers   'x-served-by': 'cache-fra1238-FRA',
-235 verbose headers   'x-cache': 'HIT',
-235 verbose headers   'x-cache-hits': '1',
-235 verbose headers   'x-timer': 'S1450718311.244747,VS0,VE0',
-235 verbose headers   vary: 'Accept' }
-236 silly get cb [ 200,
-236 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-236 silly get     etag: '"D3RHX459H6HCY35CKPX1ZFRH8"',
-236 silly get     'content-type': 'application/json',
-236 silly get     'cache-control': 'max-age=300',
-236 silly get     'content-length': '18629',
-236 silly get     'accept-ranges': 'bytes',
-236 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-236 silly get     via: '1.1 varnish',
-236 silly get     age: '205',
-236 silly get     connection: 'keep-alive',
-236 silly get     'x-served-by': 'cache-fra1238-FRA',
-236 silly get     'x-cache': 'HIT',
-236 silly get     'x-cache-hits': '1',
-236 silly get     'x-timer': 'S1450718311.244747,VS0,VE0',
-236 silly get     vary: 'Accept' } ]
-237 verbose get saving weinre to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\weinre\.cache.json
-238 http 304 https://registry.npmjs.org/fixmyjs
-239 verbose headers { date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-239 verbose headers   via: '1.1 varnish',
-239 verbose headers   'cache-control': 'max-age=300',
-239 verbose headers   etag: '"A7CB107DH4VJO3VB4W5WU0S8Z"',
-239 verbose headers   age: '0',
-239 verbose headers   connection: 'keep-alive',
-239 verbose headers   'x-served-by': 'cache-fra1227-FRA',
-239 verbose headers   'x-cache': 'HIT',
-239 verbose headers   'x-cache-hits': '1',
-239 verbose headers   'x-timer': 'S1450718311.260509,VS0,VE489',
-239 verbose headers   vary: 'Accept' }
-240 silly get cb [ 304,
-240 silly get   { date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-240 silly get     via: '1.1 varnish',
-240 silly get     'cache-control': 'max-age=300',
-240 silly get     etag: '"A7CB107DH4VJO3VB4W5WU0S8Z"',
-240 silly get     age: '0',
-240 silly get     connection: 'keep-alive',
-240 silly get     'x-served-by': 'cache-fra1227-FRA',
-240 silly get     'x-cache': 'HIT',
-240 silly get     'x-cache-hits': '1',
-240 silly get     'x-timer': 'S1450718311.260509,VS0,VE489',
-240 silly get     vary: 'Accept' } ]
-241 verbose etag https://registry.npmjs.org/fixmyjs from cache
-242 verbose get saving fixmyjs to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\fixmyjs\.cache.json
-243 http 200 https://registry.npmjs.org/copy-paste
-244 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-244 verbose headers   etag: '"CHCRVMVZGGI3UPX4PA5CC1IRS"',
-244 verbose headers   'content-type': 'application/json',
-244 verbose headers   'cache-control': 'max-age=300',
-244 verbose headers   'content-length': '22341',
-244 verbose headers   'accept-ranges': 'bytes',
-244 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-244 verbose headers   via: '1.1 varnish',
-244 verbose headers   age: '0',
-244 verbose headers   connection: 'keep-alive',
-244 verbose headers   'x-served-by': 'cache-fra1229-FRA',
-244 verbose headers   'x-cache': 'HIT',
-244 verbose headers   'x-cache-hits': '1',
-244 verbose headers   'x-timer': 'S1450718311.259766,VS0,VE242',
-244 verbose headers   vary: 'Accept' }
-245 silly get cb [ 200,
-245 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-245 silly get     etag: '"CHCRVMVZGGI3UPX4PA5CC1IRS"',
-245 silly get     'content-type': 'application/json',
-245 silly get     'cache-control': 'max-age=300',
-245 silly get     'content-length': '22341',
-245 silly get     'accept-ranges': 'bytes',
-245 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-245 silly get     via: '1.1 varnish',
-245 silly get     age: '0',
-245 silly get     connection: 'keep-alive',
-245 silly get     'x-served-by': 'cache-fra1229-FRA',
-245 silly get     'x-cache': 'HIT',
-245 silly get     'x-cache-hits': '1',
-245 silly get     'x-timer': 'S1450718311.259766,VS0,VE242',
-245 silly get     vary: 'Accept' } ]
-246 verbose get saving copy-paste to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\copy-paste\.cache.json
-247 http 404 https://registry.npmjs.org/vs-tac
-248 verbose headers { 'content-type': 'application/json',
-248 verbose headers   'cache-control': 'max-age=0',
-248 verbose headers   'content-length': '2',
-248 verbose headers   'accept-ranges': 'bytes',
-248 verbose headers   date: 'Mon, 21 Dec 2015 17:18:32 GMT',
-248 verbose headers   via: '1.1 varnish',
-248 verbose headers   age: '0',
-248 verbose headers   connection: 'keep-alive',
-248 verbose headers   'x-served-by': 'cache-fra1241-FRA',
-248 verbose headers   'x-cache': 'MISS',
-248 verbose headers   'x-cache-hits': '0',
-248 verbose headers   'x-timer': 'S1450718311.079452,VS0,VE959' }
-249 silly get cb [ 404,
-249 silly get   { 'content-type': 'application/json',
-249 silly get     'cache-control': 'max-age=0',
-249 silly get     'content-length': '2',
-249 silly get     'accept-ranges': 'bytes',
-249 silly get     date: 'Mon, 21 Dec 2015 17:18:32 GMT',
-249 silly get     via: '1.1 varnish',
-249 silly get     age: '0',
-249 silly get     connection: 'keep-alive',
-249 silly get     'x-served-by': 'cache-fra1241-FRA',
-249 silly get     'x-cache': 'MISS',
-249 silly get     'x-cache-hits': '0',
-249 silly get     'x-timer': 'S1450718311.079452,VS0,VE959' } ]
-250 http 200 https://registry.npmjs.org/taco-cli
-251 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-251 verbose headers   etag: '"DLIWKCU93WKZYPEEXM6NK6BXK"',
-251 verbose headers   'content-type': 'application/json',
-251 verbose headers   'cache-control': 'max-age=300',
-251 verbose headers   'content-length': '15086',
-251 verbose headers   'accept-ranges': 'bytes',
-251 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-251 verbose headers   via: '1.1 varnish',
-251 verbose headers   age: '0',
-251 verbose headers   connection: 'keep-alive',
-251 verbose headers   'x-served-by': 'cache-fra1243-FRA',
-251 verbose headers   'x-cache': 'MISS',
-251 verbose headers   'x-cache-hits': '0',
-251 verbose headers   'x-timer': 'S1450718311.279046,VS0,VE720',
-251 verbose headers   vary: 'Accept' }
-252 silly get cb [ 200,
-252 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-252 silly get     etag: '"DLIWKCU93WKZYPEEXM6NK6BXK"',
-252 silly get     'content-type': 'application/json',
-252 silly get     'cache-control': 'max-age=300',
-252 silly get     'content-length': '15086',
-252 silly get     'accept-ranges': 'bytes',
-252 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-252 silly get     via: '1.1 varnish',
-252 silly get     age: '0',
-252 silly get     connection: 'keep-alive',
-252 silly get     'x-served-by': 'cache-fra1243-FRA',
-252 silly get     'x-cache': 'MISS',
-252 silly get     'x-cache-hits': '0',
-252 silly get     'x-timer': 'S1450718311.279046,VS0,VE720',
-252 silly get     vary: 'Accept' } ]
-253 verbose get saving taco-cli to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\taco-cli\.cache.json
-254 http 200 https://registry.npmjs.org/grunt
-255 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-255 verbose headers   etag: '"1D1PUYUTUJNAYR49KU4G9JQRB"',
-255 verbose headers   'content-type': 'application/json',
-255 verbose headers   'cache-control': 'max-age=300',
-255 verbose headers   'content-length': '90936',
-255 verbose headers   'accept-ranges': 'bytes',
-255 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-255 verbose headers   via: '1.1 varnish',
-255 verbose headers   age: '217',
-255 verbose headers   connection: 'keep-alive',
-255 verbose headers   'x-served-by': 'cache-fra1223-FRA',
-255 verbose headers   'x-cache': 'HIT',
-255 verbose headers   'x-cache-hits': '6',
-255 verbose headers   'x-timer': 'S1450718311.267383,VS0,VE0',
-255 verbose headers   vary: 'Accept' }
-256 silly get cb [ 200,
-256 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-256 silly get     etag: '"1D1PUYUTUJNAYR49KU4G9JQRB"',
-256 silly get     'content-type': 'application/json',
-256 silly get     'cache-control': 'max-age=300',
-256 silly get     'content-length': '90936',
-256 silly get     'accept-ranges': 'bytes',
-256 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-256 silly get     via: '1.1 varnish',
-256 silly get     age: '217',
-256 silly get     connection: 'keep-alive',
-256 silly get     'x-served-by': 'cache-fra1223-FRA',
-256 silly get     'x-cache': 'HIT',
-256 silly get     'x-cache-hits': '6',
-256 silly get     'x-timer': 'S1450718311.267383,VS0,VE0',
-256 silly get     vary: 'Accept' } ]
-257 verbose get saving grunt to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\grunt\.cache.json
-258 http 200 https://registry.npmjs.org/vinyl-fs
-259 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-259 verbose headers   etag: '"8JPCD53DEOT13B701Y469OSH3"',
-259 verbose headers   'content-type': 'application/json',
-259 verbose headers   'cache-control': 'max-age=300',
-259 verbose headers   'content-length': '55259',
-259 verbose headers   'accept-ranges': 'bytes',
-259 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-259 verbose headers   via: '1.1 varnish',
-259 verbose headers   age: '30',
-259 verbose headers   connection: 'keep-alive',
-259 verbose headers   'x-served-by': 'cache-fra1227-FRA',
-259 verbose headers   'x-cache': 'HIT',
-259 verbose headers   'x-cache-hits': '1627',
-259 verbose headers   'x-timer': 'S1450718311.272301,VS0,VE0',
-259 verbose headers   vary: 'Accept' }
-260 silly get cb [ 200,
-260 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-260 silly get     etag: '"8JPCD53DEOT13B701Y469OSH3"',
-260 silly get     'content-type': 'application/json',
-260 silly get     'cache-control': 'max-age=300',
-260 silly get     'content-length': '55259',
-260 silly get     'accept-ranges': 'bytes',
-260 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-260 silly get     via: '1.1 varnish',
-260 silly get     age: '30',
-260 silly get     connection: 'keep-alive',
-260 silly get     'x-served-by': 'cache-fra1227-FRA',
-260 silly get     'x-cache': 'HIT',
-260 silly get     'x-cache-hits': '1627',
-260 silly get     'x-timer': 'S1450718311.272301,VS0,VE0',
-260 silly get     vary: 'Accept' } ]
-261 verbose get saving vinyl-fs to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\vinyl-fs\.cache.json
-262 http 200 https://registry.npmjs.org/nodeunit
-263 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-263 verbose headers   etag: '"1IPMFPDTZZ13Y3W4DIGJQD4KP"',
-263 verbose headers   'content-type': 'application/json',
-263 verbose headers   'cache-control': 'max-age=300',
-263 verbose headers   'content-length': '73904',
-263 verbose headers   'accept-ranges': 'bytes',
-263 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-263 verbose headers   via: '1.1 varnish',
-263 verbose headers   age: '132',
-263 verbose headers   connection: 'keep-alive',
-263 verbose headers   'x-served-by': 'cache-fra1245-FRA',
-263 verbose headers   'x-cache': 'HIT',
-263 verbose headers   'x-cache-hits': '2',
-263 verbose headers   'x-timer': 'S1450718311.252903,VS0,VE0',
-263 verbose headers   vary: 'Accept' }
-264 silly get cb [ 200,
-264 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-264 silly get     etag: '"1IPMFPDTZZ13Y3W4DIGJQD4KP"',
-264 silly get     'content-type': 'application/json',
-264 silly get     'cache-control': 'max-age=300',
-264 silly get     'content-length': '73904',
-264 silly get     'accept-ranges': 'bytes',
-264 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-264 silly get     via: '1.1 varnish',
-264 silly get     age: '132',
-264 silly get     connection: 'keep-alive',
-264 silly get     'x-served-by': 'cache-fra1245-FRA',
-264 silly get     'x-cache': 'HIT',
-264 silly get     'x-cache-hits': '2',
-264 silly get     'x-timer': 'S1450718311.252903,VS0,VE0',
-264 silly get     vary: 'Accept' } ]
-265 verbose get saving nodeunit to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\nodeunit\.cache.json
-266 http 200 https://registry.npmjs.org/gulp-util
-267 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-267 verbose headers   etag: '"6BI9HUP3NG37NYM1QHVUFTLZ5"',
-267 verbose headers   'content-type': 'application/json',
-267 verbose headers   'cache-control': 'max-age=300',
-267 verbose headers   'content-length': '61591',
-267 verbose headers   'accept-ranges': 'bytes',
-267 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-267 verbose headers   via: '1.1 varnish',
-267 verbose headers   age: '134',
-267 verbose headers   connection: 'keep-alive',
-267 verbose headers   'x-served-by': 'cache-fra1239-FRA',
-267 verbose headers   'x-cache': 'HIT',
-267 verbose headers   'x-cache-hits': '4',
-267 verbose headers   'x-timer': 'S1450718311.269434,VS0,VE0',
-267 verbose headers   vary: 'Accept' }
-268 silly get cb [ 200,
-268 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-268 silly get     etag: '"6BI9HUP3NG37NYM1QHVUFTLZ5"',
-268 silly get     'content-type': 'application/json',
-268 silly get     'cache-control': 'max-age=300',
-268 silly get     'content-length': '61591',
-268 silly get     'accept-ranges': 'bytes',
-268 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-268 silly get     via: '1.1 varnish',
-268 silly get     age: '134',
-268 silly get     connection: 'keep-alive',
-268 silly get     'x-served-by': 'cache-fra1239-FRA',
-268 silly get     'x-cache': 'HIT',
-268 silly get     'x-cache-hits': '4',
-268 silly get     'x-timer': 'S1450718311.269434,VS0,VE0',
-268 silly get     vary: 'Accept' } ]
-269 verbose get saving gulp-util to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\gulp-util\.cache.json
-270 http 200 https://registry.npmjs.org/grunt-cli
-271 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-271 verbose headers   etag: '"9FVAZTYZ7K5ZX5I7RQBQL2F6M"',
-271 verbose headers   'content-type': 'application/json',
-271 verbose headers   'cache-control': 'max-age=300',
-271 verbose headers   'content-length': '22027',
-271 verbose headers   'accept-ranges': 'bytes',
-271 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-271 verbose headers   via: '1.1 varnish',
-271 verbose headers   age: '282',
-271 verbose headers   connection: 'keep-alive',
-271 verbose headers   'x-served-by': 'cache-fra1230-FRA',
-271 verbose headers   'x-cache': 'HIT',
-271 verbose headers   'x-cache-hits': '5',
-271 verbose headers   'x-timer': 'S1450718311.268000,VS0,VE0',
-271 verbose headers   vary: 'Accept' }
-272 silly get cb [ 200,
-272 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-272 silly get     etag: '"9FVAZTYZ7K5ZX5I7RQBQL2F6M"',
-272 silly get     'content-type': 'application/json',
-272 silly get     'cache-control': 'max-age=300',
-272 silly get     'content-length': '22027',
-272 silly get     'accept-ranges': 'bytes',
-272 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-272 silly get     via: '1.1 varnish',
-272 silly get     age: '282',
-272 silly get     connection: 'keep-alive',
-272 silly get     'x-served-by': 'cache-fra1230-FRA',
-272 silly get     'x-cache': 'HIT',
-272 silly get     'x-cache-hits': '5',
-272 silly get     'x-timer': 'S1450718311.268000,VS0,VE0',
-272 silly get     vary: 'Accept' } ]
-273 verbose get saving grunt-cli to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\grunt-cli\.cache.json
-274 http 200 https://registry.npmjs.org/gulp-shell
-275 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-275 verbose headers   etag: '"38OMFMWMH79MSPU2QOG88AQ9K"',
-275 verbose headers   'content-type': 'application/json',
-275 verbose headers   'cache-control': 'max-age=300',
-275 verbose headers   'content-length': '29794',
-275 verbose headers   'accept-ranges': 'bytes',
-275 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-275 verbose headers   via: '1.1 varnish',
-275 verbose headers   age: '201',
-275 verbose headers   connection: 'keep-alive',
-275 verbose headers   'x-served-by': 'cache-fra1229-FRA',
-275 verbose headers   'x-cache': 'HIT',
-275 verbose headers   'x-cache-hits': '2',
-275 verbose headers   'x-timer': 'S1450718311.263687,VS0,VE0',
-275 verbose headers   vary: 'Accept' }
-276 silly get cb [ 200,
-276 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-276 silly get     etag: '"38OMFMWMH79MSPU2QOG88AQ9K"',
-276 silly get     'content-type': 'application/json',
-276 silly get     'cache-control': 'max-age=300',
-276 silly get     'content-length': '29794',
-276 silly get     'accept-ranges': 'bytes',
-276 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-276 silly get     via: '1.1 varnish',
-276 silly get     age: '201',
-276 silly get     connection: 'keep-alive',
-276 silly get     'x-served-by': 'cache-fra1229-FRA',
-276 silly get     'x-cache': 'HIT',
-276 silly get     'x-cache-hits': '2',
-276 silly get     'x-timer': 'S1450718311.263687,VS0,VE0',
-276 silly get     vary: 'Accept' } ]
-277 verbose get saving gulp-shell to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\gulp-shell\.cache.json
-278 http 200 https://registry.npmjs.org/uglify-js
-279 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-279 verbose headers   etag: '"BE7FWKSDTIOBL0YMPX4ZON01W"',
-279 verbose headers   'content-type': 'application/json',
-279 verbose headers   'cache-control': 'max-age=300',
-279 verbose headers   'content-length': '102950',
-279 verbose headers   'accept-ranges': 'bytes',
-279 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-279 verbose headers   via: '1.1 varnish',
-279 verbose headers   age: '44',
-279 verbose headers   connection: 'keep-alive',
-279 verbose headers   'x-served-by': 'cache-fra1236-FRA',
-279 verbose headers   'x-cache': 'HIT',
-279 verbose headers   'x-cache-hits': '4',
-279 verbose headers   'x-timer': 'S1450718311.261963,VS0,VE0',
-279 verbose headers   vary: 'Accept' }
-280 silly get cb [ 200,
-280 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-280 silly get     etag: '"BE7FWKSDTIOBL0YMPX4ZON01W"',
-280 silly get     'content-type': 'application/json',
-280 silly get     'cache-control': 'max-age=300',
-280 silly get     'content-length': '102950',
-280 silly get     'accept-ranges': 'bytes',
-280 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-280 silly get     via: '1.1 varnish',
-280 silly get     age: '44',
-280 silly get     connection: 'keep-alive',
-280 silly get     'x-served-by': 'cache-fra1236-FRA',
-280 silly get     'x-cache': 'HIT',
-280 silly get     'x-cache-hits': '4',
-280 silly get     'x-timer': 'S1450718311.261963,VS0,VE0',
-280 silly get     vary: 'Accept' } ]
-281 verbose get saving uglify-js to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\uglify-js\.cache.json
-282 http 200 https://registry.npmjs.org/uglifycss
-283 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-283 verbose headers   etag: '"18IVXU4K4FWMYG127JB7ZX9N6"',
-283 verbose headers   'content-type': 'application/json',
-283 verbose headers   'cache-control': 'max-age=300',
-283 verbose headers   'content-length': '18290',
-283 verbose headers   'accept-ranges': 'bytes',
-283 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-283 verbose headers   via: '1.1 varnish',
-283 verbose headers   age: '0',
-283 verbose headers   connection: 'keep-alive',
-283 verbose headers   'x-served-by': 'cache-fra1237-FRA',
-283 verbose headers   'x-cache': 'HIT',
-283 verbose headers   'x-cache-hits': '1',
-283 verbose headers   'x-timer': 'S1450718311.280520,VS0,VE484',
-283 verbose headers   vary: 'Accept' }
-284 silly get cb [ 200,
-284 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-284 silly get     etag: '"18IVXU4K4FWMYG127JB7ZX9N6"',
-284 silly get     'content-type': 'application/json',
-284 silly get     'cache-control': 'max-age=300',
-284 silly get     'content-length': '18290',
-284 silly get     'accept-ranges': 'bytes',
-284 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-284 silly get     via: '1.1 varnish',
-284 silly get     age: '0',
-284 silly get     connection: 'keep-alive',
-284 silly get     'x-served-by': 'cache-fra1237-FRA',
-284 silly get     'x-cache': 'HIT',
-284 silly get     'x-cache-hits': '1',
-284 silly get     'x-timer': 'S1450718311.280520,VS0,VE484',
-284 silly get     vary: 'Accept' } ]
-285 verbose get saving uglifycss to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\uglifycss\.cache.json
-286 http 200 https://registry.npmjs.org/q
-287 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-287 verbose headers   etag: '"CGKXTH90AYVMVLNY2ENJMD66K"',
-287 verbose headers   'content-type': 'application/json',
-287 verbose headers   'cache-control': 'max-age=300',
-287 verbose headers   'content-length': '144041',
-287 verbose headers   'accept-ranges': 'bytes',
-287 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-287 verbose headers   via: '1.1 varnish',
-287 verbose headers   age: '118',
-287 verbose headers   connection: 'keep-alive',
-287 verbose headers   'x-served-by': 'cache-fra1231-FRA',
-287 verbose headers   'x-cache': 'HIT',
-287 verbose headers   'x-cache-hits': '3',
-287 verbose headers   'x-timer': 'S1450718311.240467,VS0,VE0',
-287 verbose headers   vary: 'Accept' }
-288 silly get cb [ 200,
-288 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-288 silly get     etag: '"CGKXTH90AYVMVLNY2ENJMD66K"',
-288 silly get     'content-type': 'application/json',
-288 silly get     'cache-control': 'max-age=300',
-288 silly get     'content-length': '144041',
-288 silly get     'accept-ranges': 'bytes',
-288 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-288 silly get     via: '1.1 varnish',
-288 silly get     age: '118',
-288 silly get     connection: 'keep-alive',
-288 silly get     'x-served-by': 'cache-fra1231-FRA',
-288 silly get     'x-cache': 'HIT',
-288 silly get     'x-cache-hits': '3',
-288 silly get     'x-timer': 'S1450718311.240467,VS0,VE0',
-288 silly get     vary: 'Accept' } ]
-289 verbose get saving q to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\q\.cache.json
-290 http 200 https://registry.npmjs.org/gulp
-291 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-291 verbose headers   etag: '"WJ99A1IXVKQM24RK19YLRUES"',
-291 verbose headers   'content-type': 'application/json',
-291 verbose headers   'cache-control': 'max-age=300',
-291 verbose headers   'content-length': '108756',
-291 verbose headers   'accept-ranges': 'bytes',
-291 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-291 verbose headers   via: '1.1 varnish',
-291 verbose headers   age: '207',
-291 verbose headers   connection: 'keep-alive',
-291 verbose headers   'x-served-by': 'cache-fra1247-FRA',
-291 verbose headers   'x-cache': 'HIT',
-291 verbose headers   'x-cache-hits': '5',
-291 verbose headers   'x-timer': 'S1450718311.254240,VS0,VE0',
-291 verbose headers   vary: 'Accept' }
-292 silly get cb [ 200,
-292 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-292 silly get     etag: '"WJ99A1IXVKQM24RK19YLRUES"',
-292 silly get     'content-type': 'application/json',
-292 silly get     'cache-control': 'max-age=300',
-292 silly get     'content-length': '108756',
-292 silly get     'accept-ranges': 'bytes',
-292 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-292 silly get     via: '1.1 varnish',
-292 silly get     age: '207',
-292 silly get     connection: 'keep-alive',
-292 silly get     'x-served-by': 'cache-fra1247-FRA',
-292 silly get     'x-cache': 'HIT',
-292 silly get     'x-cache-hits': '5',
-292 silly get     'x-timer': 'S1450718311.254240,VS0,VE0',
-292 silly get     vary: 'Accept' } ]
-293 verbose get saving gulp to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\gulp\.cache.json
-294 http 200 https://registry.npmjs.org/nw-builder
-295 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-295 verbose headers   etag: '"1YD771QJMROXECM33HN5NQECM"',
-295 verbose headers   'content-type': 'application/json',
-295 verbose headers   'cache-control': 'max-age=300',
-295 verbose headers   'content-length': '19642',
-295 verbose headers   'accept-ranges': 'bytes',
-295 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-295 verbose headers   via: '1.1 varnish',
-295 verbose headers   age: '86',
-295 verbose headers   connection: 'keep-alive',
-295 verbose headers   'x-served-by': 'cache-fra1241-FRA',
-295 verbose headers   'x-cache': 'HIT',
-295 verbose headers   'x-cache-hits': '1',
-295 verbose headers   'x-timer': 'S1450718311.273422,VS0,VE0',
-295 verbose headers   vary: 'Accept' }
-296 silly get cb [ 200,
-296 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-296 silly get     etag: '"1YD771QJMROXECM33HN5NQECM"',
-296 silly get     'content-type': 'application/json',
-296 silly get     'cache-control': 'max-age=300',
-296 silly get     'content-length': '19642',
-296 silly get     'accept-ranges': 'bytes',
-296 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-296 silly get     via: '1.1 varnish',
-296 silly get     age: '86',
-296 silly get     connection: 'keep-alive',
-296 silly get     'x-served-by': 'cache-fra1241-FRA',
-296 silly get     'x-cache': 'HIT',
-296 silly get     'x-cache-hits': '1',
-296 silly get     'x-timer': 'S1450718311.273422,VS0,VE0',
-296 silly get     vary: 'Accept' } ]
-297 verbose get saving nw-builder to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\nw-builder\.cache.json
-298 http 200 https://registry.npmjs.org/node-sass
-299 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-299 verbose headers   etag: '"D4CSBYXLTASPFR8U0VPYSIOL4"',
-299 verbose headers   'content-type': 'application/json',
-299 verbose headers   'cache-control': 'max-age=300',
-299 verbose headers   'content-length': '156531',
-299 verbose headers   'accept-ranges': 'bytes',
-299 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-299 verbose headers   via: '1.1 varnish',
-299 verbose headers   age: '32',
-299 verbose headers   connection: 'keep-alive',
-299 verbose headers   'x-served-by': 'cache-fra1242-FRA',
-299 verbose headers   'x-cache': 'HIT',
-299 verbose headers   'x-cache-hits': '1',
-299 verbose headers   'x-timer': 'S1450718311.242529,VS0,VE0',
-299 verbose headers   vary: 'Accept' }
-300 silly get cb [ 200,
-300 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-300 silly get     etag: '"D4CSBYXLTASPFR8U0VPYSIOL4"',
-300 silly get     'content-type': 'application/json',
-300 silly get     'cache-control': 'max-age=300',
-300 silly get     'content-length': '156531',
-300 silly get     'accept-ranges': 'bytes',
-300 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-300 silly get     via: '1.1 varnish',
-300 silly get     age: '32',
-300 silly get     connection: 'keep-alive',
-300 silly get     'x-served-by': 'cache-fra1242-FRA',
-300 silly get     'x-cache': 'HIT',
-300 silly get     'x-cache-hits': '1',
-300 silly get     'x-timer': 'S1450718311.242529,VS0,VE0',
-300 silly get     vary: 'Accept' } ]
-301 verbose get saving node-sass to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\node-sass\.cache.json
-302 http 200 https://registry.npmjs.org/bower
-303 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-303 verbose headers   etag: '"7KRF249ATORH5LCGUTP2M06WQ"',
-303 verbose headers   'content-type': 'application/json',
-303 verbose headers   'cache-control': 'max-age=300',
-303 verbose headers   'content-length': '161678',
-303 verbose headers   'accept-ranges': 'bytes',
-303 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-303 verbose headers   via: '1.1 varnish',
-303 verbose headers   age: '14',
-303 verbose headers   connection: 'keep-alive',
-303 verbose headers   'x-served-by': 'cache-fra1222-FRA',
-303 verbose headers   'x-cache': 'HIT',
-303 verbose headers   'x-cache-hits': '2',
-303 verbose headers   'x-timer': 'S1450718311.256929,VS0,VE0',
-303 verbose headers   vary: 'Accept' }
-304 silly get cb [ 200,
-304 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-304 silly get     etag: '"7KRF249ATORH5LCGUTP2M06WQ"',
-304 silly get     'content-type': 'application/json',
-304 silly get     'cache-control': 'max-age=300',
-304 silly get     'content-length': '161678',
-304 silly get     'accept-ranges': 'bytes',
-304 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-304 silly get     via: '1.1 varnish',
-304 silly get     age: '14',
-304 silly get     connection: 'keep-alive',
-304 silly get     'x-served-by': 'cache-fra1222-FRA',
-304 silly get     'x-cache': 'HIT',
-304 silly get     'x-cache-hits': '2',
-304 silly get     'x-timer': 'S1450718311.256929,VS0,VE0',
-304 silly get     vary: 'Accept' } ]
-305 verbose get saving bower to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\bower\.cache.json
-306 http 200 https://registry.npmjs.org/yargs
-307 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-307 verbose headers   etag: '"7EKDP4FRWZTLN3TSSF6L8LBTH"',
-307 verbose headers   'content-type': 'application/json',
-307 verbose headers   'cache-control': 'max-age=300',
-307 verbose headers   'content-length': '170209',
-307 verbose headers   'accept-ranges': 'bytes',
-307 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-307 verbose headers   via: '1.1 varnish',
-307 verbose headers   age: '35',
-307 verbose headers   connection: 'keep-alive',
-307 verbose headers   'x-served-by': 'cache-fra1238-FRA',
-307 verbose headers   'x-cache': 'HIT',
-307 verbose headers   'x-cache-hits': '1',
-307 verbose headers   'x-timer': 'S1450718311.238804,VS0,VE0',
-307 verbose headers   vary: 'Accept' }
-308 silly get cb [ 200,
-308 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-308 silly get     etag: '"7EKDP4FRWZTLN3TSSF6L8LBTH"',
-308 silly get     'content-type': 'application/json',
-308 silly get     'cache-control': 'max-age=300',
-308 silly get     'content-length': '170209',
-308 silly get     'accept-ranges': 'bytes',
-308 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-308 silly get     via: '1.1 varnish',
-308 silly get     age: '35',
-308 silly get     connection: 'keep-alive',
-308 silly get     'x-served-by': 'cache-fra1238-FRA',
-308 silly get     'x-cache': 'HIT',
-308 silly get     'x-cache-hits': '1',
-308 silly get     'x-timer': 'S1450718311.238804,VS0,VE0',
-308 silly get     vary: 'Accept' } ]
-309 verbose get saving yargs to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\yargs\.cache.json
-310 http 200 https://registry.npmjs.org/ripple-emulator
-311 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-311 verbose headers   etag: '"E1LSUL3EWTPDWE6PNJNBKDBWG"',
-311 verbose headers   'content-type': 'application/json',
-311 verbose headers   'cache-control': 'max-age=300',
-311 verbose headers   'content-length': '31452',
-311 verbose headers   'accept-ranges': 'bytes',
-311 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-311 verbose headers   via: '1.1 varnish',
-311 verbose headers   age: '179',
-311 verbose headers   connection: 'keep-alive',
-311 verbose headers   'x-served-by': 'cache-fra1229-FRA',
-311 verbose headers   'x-cache': 'HIT',
-311 verbose headers   'x-cache-hits': '1',
-311 verbose headers   'x-timer': 'S1450718311.281789,VS0,VE3',
-311 verbose headers   vary: 'Accept' }
-312 silly get cb [ 200,
-312 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-312 silly get     etag: '"E1LSUL3EWTPDWE6PNJNBKDBWG"',
-312 silly get     'content-type': 'application/json',
-312 silly get     'cache-control': 'max-age=300',
-312 silly get     'content-length': '31452',
-312 silly get     'accept-ranges': 'bytes',
-312 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-312 silly get     via: '1.1 varnish',
-312 silly get     age: '179',
-312 silly get     connection: 'keep-alive',
-312 silly get     'x-served-by': 'cache-fra1229-FRA',
-312 silly get     'x-cache': 'HIT',
-312 silly get     'x-cache-hits': '1',
-312 silly get     'x-timer': 'S1450718311.281789,VS0,VE3',
-312 silly get     vary: 'Accept' } ]
-313 verbose get saving ripple-emulator to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\ripple-emulator\.cache.json
-314 http 200 https://registry.npmjs.org/jslint
-315 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-315 verbose headers   etag: '"7ZQO6E20ZFQTUJYDKQI7V5VT2"',
-315 verbose headers   'content-type': 'application/json',
-315 verbose headers   'cache-control': 'max-age=300',
-315 verbose headers   'content-length': '105688',
-315 verbose headers   'accept-ranges': 'bytes',
-315 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-315 verbose headers   via: '1.1 varnish',
-315 verbose headers   age: '180',
-315 verbose headers   connection: 'keep-alive',
-315 verbose headers   'x-served-by': 'cache-fra1236-FRA',
-315 verbose headers   'x-cache': 'HIT',
-315 verbose headers   'x-cache-hits': '1',
-315 verbose headers   'x-timer': 'S1450718311.276499,VS0,VE0',
-315 verbose headers   vary: 'Accept' }
-316 silly get cb [ 200,
-316 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-316 silly get     etag: '"7ZQO6E20ZFQTUJYDKQI7V5VT2"',
-316 silly get     'content-type': 'application/json',
-316 silly get     'cache-control': 'max-age=300',
-316 silly get     'content-length': '105688',
-316 silly get     'accept-ranges': 'bytes',
-316 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-316 silly get     via: '1.1 varnish',
-316 silly get     age: '180',
-316 silly get     connection: 'keep-alive',
-316 silly get     'x-served-by': 'cache-fra1236-FRA',
-316 silly get     'x-cache': 'HIT',
-316 silly get     'x-cache-hits': '1',
-316 silly get     'x-timer': 'S1450718311.276499,VS0,VE0',
-316 silly get     vary: 'Accept' } ]
-317 verbose get saving jslint to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\jslint\.cache.json
-318 http 200 https://registry.npmjs.org/cordova
-319 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-319 verbose headers   etag: '"29RPXYPI8HQ80DNKKOWL8XUW9"',
-319 verbose headers   'content-type': 'application/json',
-319 verbose headers   'cache-control': 'max-age=300',
-319 verbose headers   'content-length': '371822',
-319 verbose headers   'accept-ranges': 'bytes',
-319 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-319 verbose headers   via: '1.1 varnish',
-319 verbose headers   age: '127',
-319 verbose headers   connection: 'keep-alive',
-319 verbose headers   'x-served-by': 'cache-fra1240-FRA',
-319 verbose headers   'x-cache': 'HIT',
-319 verbose headers   'x-cache-hits': '1',
-319 verbose headers   'x-timer': 'S1450718311.242957,VS0,VE2',
-319 verbose headers   vary: 'Accept' }
-320 silly get cb [ 200,
-320 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-320 silly get     etag: '"29RPXYPI8HQ80DNKKOWL8XUW9"',
-320 silly get     'content-type': 'application/json',
-320 silly get     'cache-control': 'max-age=300',
-320 silly get     'content-length': '371822',
-320 silly get     'accept-ranges': 'bytes',
-320 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-320 silly get     via: '1.1 varnish',
-320 silly get     age: '127',
-320 silly get     connection: 'keep-alive',
-320 silly get     'x-served-by': 'cache-fra1240-FRA',
-320 silly get     'x-cache': 'HIT',
-320 silly get     'x-cache-hits': '1',
-320 silly get     'x-timer': 'S1450718311.242957,VS0,VE2',
-320 silly get     vary: 'Accept' } ]
-321 verbose get saving cordova to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\cordova\.cache.json
-322 http 200 https://registry.npmjs.org/ionic
-323 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-323 verbose headers   etag: '"CR1UALDEJRBB6AXHUPRFFPI1R"',
-323 verbose headers   'content-type': 'application/json',
-323 verbose headers   'cache-control': 'max-age=300',
-323 verbose headers   'content-length': '649223',
-323 verbose headers   'accept-ranges': 'bytes',
-323 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-323 verbose headers   via: '1.1 varnish',
-323 verbose headers   age: '169',
-323 verbose headers   connection: 'keep-alive',
-323 verbose headers   'x-served-by': 'cache-fra1244-FRA',
-323 verbose headers   'x-cache': 'HIT',
-323 verbose headers   'x-cache-hits': '1',
-323 verbose headers   'x-timer': 'S1450718311.246578,VS0,VE1',
-323 verbose headers   vary: 'Accept' }
-324 silly get cb [ 200,
-324 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-324 silly get     etag: '"CR1UALDEJRBB6AXHUPRFFPI1R"',
-324 silly get     'content-type': 'application/json',
-324 silly get     'cache-control': 'max-age=300',
-324 silly get     'content-length': '649223',
-324 silly get     'accept-ranges': 'bytes',
-324 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-324 silly get     via: '1.1 varnish',
-324 silly get     age: '169',
-324 silly get     connection: 'keep-alive',
-324 silly get     'x-served-by': 'cache-fra1244-FRA',
-324 silly get     'x-cache': 'HIT',
-324 silly get     'x-cache-hits': '1',
-324 silly get     'x-timer': 'S1450718311.246578,VS0,VE1',
-324 silly get     vary: 'Accept' } ]
-325 verbose get saving ionic to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\ionic\.cache.json
-326 http 200 https://registry.npmjs.org/webpack
-327 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-327 verbose headers   etag: '"3I680VK8SHP7IVQAVQGUD45"',
-327 verbose headers   'content-type': 'application/json',
-327 verbose headers   'cache-control': 'max-age=300',
-327 verbose headers   'content-length': '719337',
-327 verbose headers   'accept-ranges': 'bytes',
-327 verbose headers   date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-327 verbose headers   via: '1.1 varnish',
-327 verbose headers   age: '14',
-327 verbose headers   connection: 'keep-alive',
-327 verbose headers   'x-served-by': 'cache-fra1236-FRA',
-327 verbose headers   'x-cache': 'HIT',
-327 verbose headers   'x-cache-hits': '1',
-327 verbose headers   'x-timer': 'S1450718311.253381,VS0,VE2',
-327 verbose headers   vary: 'Accept' }
-328 silly get cb [ 200,
-328 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-328 silly get     etag: '"3I680VK8SHP7IVQAVQGUD45"',
-328 silly get     'content-type': 'application/json',
-328 silly get     'cache-control': 'max-age=300',
-328 silly get     'content-length': '719337',
-328 silly get     'accept-ranges': 'bytes',
-328 silly get     date: 'Mon, 21 Dec 2015 17:18:31 GMT',
-328 silly get     via: '1.1 varnish',
-328 silly get     age: '14',
-328 silly get     connection: 'keep-alive',
-328 silly get     'x-served-by': 'cache-fra1236-FRA',
-328 silly get     'x-cache': 'HIT',
-328 silly get     'x-cache-hits': '1',
-328 silly get     'x-timer': 'S1450718311.253381,VS0,VE2',
-328 silly get     vary: 'Accept' } ]
-329 verbose get saving webpack to C:\Users\mfluer\AppData\Roaming\npm-cache\registry.npmjs.org\webpack\.cache.json
-330 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/vs-tac
-330 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
-330 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:242:14)
-330 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
-330 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:198:22)
-330 verbose stack     at emitTwo (events.js:87:13)
-330 verbose stack     at Request.emit (events.js:172:7)
-330 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1063:14)
-330 verbose stack     at emitOne (events.js:82:20)
-330 verbose stack     at Request.emit (events.js:169:7)
-330 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1009:12)
-331 verbose statusCode 404
-332 verbose pkgid vs-tac
-333 verbose cwd C:\apps\splitterfinder
-334 error Windows_NT 10.0.10586
-335 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "update" "-g"
-336 error node v4.2.0
-337 error npm  v2.14.7
-338 error code E404
-339 error 404 Registry returned 404 for GET on https://registry.npmjs.org/vs-tac
-339 error 404
-339 error 404 'vs-tac' is not in the npm registry.
-339 error 404 You should bug the author to publish it (or use the name yourself!)
-339 error 404
-339 error 404 Note that you can also install from a
-339 error 404 tarball, folder, http url, or git url.
-340 verbose exit [ 1, true ]
+2 info using npm@3.3.12
+3 info using node@v5.2.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData jasmine
+8 silly fetchNamedPackageData jasmine
+9 silly mapToRegistry name jasmine
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/jasmine
+13 verbose request uri https://registry.npmjs.org/jasmine
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 11:49:40
+16 verbose request id 3a5b8a2d322a7f8e
+17 verbose etag "BGYAOXRWABFLGILNI4VZ0Q94T"
+18 http request GET https://registry.npmjs.org/jasmine
+19 http 304 https://registry.npmjs.org/jasmine
+20 verbose headers { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   etag: '"BGYAOXRWABFLGILNI4VZ0Q94T"',
+20 verbose headers   age: '253',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-fra1220-FRA',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '3',
+20 verbose headers   'x-timer': 'S1453027781.000892,VS0,VE0',
+20 verbose headers   vary: 'Accept' }
+21 silly get cb [ 304,
+21 silly get   { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     etag: '"BGYAOXRWABFLGILNI4VZ0Q94T"',
+21 silly get     age: '253',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-fra1220-FRA',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '3',
+21 silly get     'x-timer': 'S1453027781.000892,VS0,VE0',
+21 silly get     vary: 'Accept' } ]
+22 verbose etag https://registry.npmjs.org/jasmine from cache
+23 verbose get saving jasmine to /home/markus/.npm/registry.npmjs.org/jasmine/.cache.json
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule jasmine@2.4.1 checking installable status
+37 silly cache add args [ 'jasmine', null ]
+38 verbose cache add spec jasmine
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'jasmine',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'jasmine',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: '*',
+39 silly cache add   type: 'range' }
+40 silly addNamed jasmine@*
+41 verbose addNamed "*" is a valid semver range for jasmine
+42 silly addNameRange { name: 'jasmine', range: '*', hasData: false }
+43 silly mapToRegistry name jasmine
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/jasmine
+47 verbose addNameRange registry:https://registry.npmjs.org/jasmine not in flight; fetching
+48 verbose get https://registry.npmjs.org/jasmine not expired, no request
+49 silly addNameRange number 2 { name: 'jasmine', range: '*', hasData: true }
+50 silly addNameRange versions [ 'jasmine',
+50 silly addNameRange   [ '2.0.1',
+50 silly addNameRange     '2.1.0',
+50 silly addNameRange     '2.1.1',
+50 silly addNameRange     '2.2.0',
+50 silly addNameRange     '2.2.1',
+50 silly addNameRange     '2.3.0',
+50 silly addNameRange     '2.3.1',
+50 silly addNameRange     '2.3.2',
+50 silly addNameRange     '2.4.0',
+50 silly addNameRange     '2.4.1' ] ]
+51 silly addNamed jasmine@2.4.1
+52 verbose addNamed "2.4.1" is a plain semver version for jasmine
+53 silly cache afterAdd jasmine@2.4.1
+54 verbose afterAdd /home/markus/.npm/jasmine/2.4.1/package/package.json not in flight; writing
+55 verbose afterAdd /home/markus/.npm/jasmine/2.4.1/package/package.json written
+56 silly fetchNamedPackageData exit
+57 silly mapToRegistry name exit
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/exit
+61 silly fetchNamedPackageData glob
+62 silly mapToRegistry name glob
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry uri https://registry.npmjs.org/glob
+66 silly fetchNamedPackageData jasmine-core
+67 silly mapToRegistry name jasmine-core
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry uri https://registry.npmjs.org/jasmine-core
+71 verbose request uri https://registry.npmjs.org/exit
+72 verbose request no auth needed
+73 info attempt registry request try #1 at 11:49:41
+74 verbose etag "66GA3RUQR76WJVRZF6ITVOZPO"
+75 http request GET https://registry.npmjs.org/exit
+76 verbose request uri https://registry.npmjs.org/jasmine-core
+77 verbose request no auth needed
+78 info attempt registry request try #1 at 11:49:41
+79 verbose etag "BEIRIPJFU8OAVC0KOUI74RW3O"
+80 http request GET https://registry.npmjs.org/jasmine-core
+81 verbose request uri https://registry.npmjs.org/glob
+82 verbose request no auth needed
+83 info attempt registry request try #1 at 11:49:41
+84 verbose etag "A7BOU5ADTE6Q0XZ834ECBTUR0"
+85 http request GET https://registry.npmjs.org/glob
+86 http 304 https://registry.npmjs.org/exit
+87 verbose headers { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+87 verbose headers   via: '1.1 varnish',
+87 verbose headers   'cache-control': 'max-age=300',
+87 verbose headers   etag: '"66GA3RUQR76WJVRZF6ITVOZPO"',
+87 verbose headers   age: '10',
+87 verbose headers   connection: 'keep-alive',
+87 verbose headers   'x-served-by': 'cache-fra1224-FRA',
+87 verbose headers   'x-cache': 'HIT',
+87 verbose headers   'x-cache-hits': '1',
+87 verbose headers   'x-timer': 'S1453027781.415885,VS0,VE0',
+87 verbose headers   vary: 'Accept' }
+88 silly get cb [ 304,
+88 silly get   { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+88 silly get     via: '1.1 varnish',
+88 silly get     'cache-control': 'max-age=300',
+88 silly get     etag: '"66GA3RUQR76WJVRZF6ITVOZPO"',
+88 silly get     age: '10',
+88 silly get     connection: 'keep-alive',
+88 silly get     'x-served-by': 'cache-fra1224-FRA',
+88 silly get     'x-cache': 'HIT',
+88 silly get     'x-cache-hits': '1',
+88 silly get     'x-timer': 'S1453027781.415885,VS0,VE0',
+88 silly get     vary: 'Accept' } ]
+89 verbose etag https://registry.npmjs.org/exit from cache
+90 verbose get saving exit to /home/markus/.npm/registry.npmjs.org/exit/.cache.json
+91 silly resolveWithNewModule exit@0.1.2 checking installable status
+92 silly cache add args [ 'exit@^0.1.2', null ]
+93 verbose cache add spec exit@^0.1.2
+94 silly cache add parsed spec Result {
+94 silly cache add   raw: 'exit@^0.1.2',
+94 silly cache add   scope: null,
+94 silly cache add   name: 'exit',
+94 silly cache add   rawSpec: '^0.1.2',
+94 silly cache add   spec: '>=0.1.2 <0.2.0',
+94 silly cache add   type: 'range' }
+95 silly addNamed exit@>=0.1.2 <0.2.0
+96 verbose addNamed ">=0.1.2 <0.2.0" is a valid semver range for exit
+97 silly addNameRange { name: 'exit', range: '>=0.1.2 <0.2.0', hasData: false }
+98 silly mapToRegistry name exit
+99 silly mapToRegistry using default registry
+100 silly mapToRegistry registry https://registry.npmjs.org/
+101 silly mapToRegistry uri https://registry.npmjs.org/exit
+102 verbose addNameRange registry:https://registry.npmjs.org/exit not in flight; fetching
+103 http 304 https://registry.npmjs.org/glob
+104 verbose headers { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+104 verbose headers   via: '1.1 varnish',
+104 verbose headers   'cache-control': 'max-age=300',
+104 verbose headers   etag: '"A7BOU5ADTE6Q0XZ834ECBTUR0"',
+104 verbose headers   age: '43',
+104 verbose headers   connection: 'keep-alive',
+104 verbose headers   'x-served-by': 'cache-fra1240-FRA',
+104 verbose headers   'x-cache': 'HIT',
+104 verbose headers   'x-cache-hits': '3',
+104 verbose headers   'x-timer': 'S1453027781.437090,VS0,VE0',
+104 verbose headers   vary: 'Accept' }
+105 silly get cb [ 304,
+105 silly get   { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+105 silly get     via: '1.1 varnish',
+105 silly get     'cache-control': 'max-age=300',
+105 silly get     etag: '"A7BOU5ADTE6Q0XZ834ECBTUR0"',
+105 silly get     age: '43',
+105 silly get     connection: 'keep-alive',
+105 silly get     'x-served-by': 'cache-fra1240-FRA',
+105 silly get     'x-cache': 'HIT',
+105 silly get     'x-cache-hits': '3',
+105 silly get     'x-timer': 'S1453027781.437090,VS0,VE0',
+105 silly get     vary: 'Accept' } ]
+106 verbose etag https://registry.npmjs.org/glob from cache
+107 verbose get saving glob to /home/markus/.npm/registry.npmjs.org/glob/.cache.json
+108 verbose get https://registry.npmjs.org/exit not expired, no request
+109 silly addNameRange number 2 { name: 'exit', range: '>=0.1.2 <0.2.0', hasData: true }
+110 silly addNameRange versions [ 'exit', [ '0.1.0', '0.1.1', '0.1.2' ] ]
+111 silly addNamed exit@0.1.2
+112 verbose addNamed "0.1.2" is a plain semver version for exit
+113 silly cache afterAdd exit@0.1.2
+114 verbose afterAdd /home/markus/.npm/exit/0.1.2/package/package.json not in flight; writing
+115 silly resolveWithNewModule glob@3.2.11 checking installable status
+116 silly cache add args [ 'glob@^3.2.11', null ]
+117 verbose cache add spec glob@^3.2.11
+118 silly cache add parsed spec Result {
+118 silly cache add   raw: 'glob@^3.2.11',
+118 silly cache add   scope: null,
+118 silly cache add   name: 'glob',
+118 silly cache add   rawSpec: '^3.2.11',
+118 silly cache add   spec: '>=3.2.11 <4.0.0',
+118 silly cache add   type: 'range' }
+119 silly addNamed glob@>=3.2.11 <4.0.0
+120 verbose addNamed ">=3.2.11 <4.0.0" is a valid semver range for glob
+121 silly addNameRange { name: 'glob', range: '>=3.2.11 <4.0.0', hasData: false }
+122 silly mapToRegistry name glob
+123 silly mapToRegistry using default registry
+124 silly mapToRegistry registry https://registry.npmjs.org/
+125 silly mapToRegistry uri https://registry.npmjs.org/glob
+126 verbose addNameRange registry:https://registry.npmjs.org/glob not in flight; fetching
+127 verbose get https://registry.npmjs.org/glob not expired, no request
+128 silly addNameRange number 2 { name: 'glob', range: '>=3.2.11 <4.0.0', hasData: true }
+129 silly addNameRange versions [ 'glob',
+129 silly addNameRange   [ '1.1.0',
+129 silly addNameRange     '2.0.9',
+129 silly addNameRange     '2.0.8',
+129 silly addNameRange     '2.0.7',
+129 silly addNameRange     '2.1.0',
+129 silly addNameRange     '3.0.0',
+129 silly addNameRange     '3.0.1',
+129 silly addNameRange     '3.1.0',
+129 silly addNameRange     '3.1.1',
+129 silly addNameRange     '3.1.2',
+129 silly addNameRange     '3.1.3',
+129 silly addNameRange     '3.1.4',
+129 silly addNameRange     '3.1.5',
+129 silly addNameRange     '3.1.6',
+129 silly addNameRange     '3.1.7',
+129 silly addNameRange     '3.1.9',
+129 silly addNameRange     '3.1.10',
+129 silly addNameRange     '3.1.11',
+129 silly addNameRange     '3.1.12',
+129 silly addNameRange     '3.1.13',
+129 silly addNameRange     '3.1.14',
+129 silly addNameRange     '3.1.15',
+129 silly addNameRange     '3.1.16',
+129 silly addNameRange     '3.1.17',
+129 silly addNameRange     '3.1.18',
+129 silly addNameRange     '3.1.19',
+129 silly addNameRange     '3.1.20',
+129 silly addNameRange     '3.1.21',
+129 silly addNameRange     '3.2.0',
+129 silly addNameRange     '3.2.1',
+129 silly addNameRange     '3.2.3',
+129 silly addNameRange     '3.2.4',
+129 silly addNameRange     '3.2.5',
+129 silly addNameRange     '3.2.6',
+129 silly addNameRange     '3.2.7',
+129 silly addNameRange     '3.2.8',
+129 silly addNameRange     '3.2.9',
+129 silly addNameRange     '3.2.10',
+129 silly addNameRange     '3.2.11',
+129 silly addNameRange     '4.0.0',
+129 silly addNameRange     '4.0.1',
+129 silly addNameRange     '4.0.2',
+129 silly addNameRange     '4.0.3',
+129 silly addNameRange     '4.0.4',
+129 silly addNameRange     '4.0.5',
+129 silly addNameRange     '4.0.6',
+129 silly addNameRange     '4.1.2-beta',
+129 silly addNameRange     '4.1.2',
+129 silly addNameRange     '4.1.3',
+129 silly addNameRange     '4.1.4',
+129 silly addNameRange     '4.1.5',
+129 silly addNameRange     '4.1.6',
+129 silly addNameRange     '4.2.0',
+129 silly addNameRange     '4.2.1',
+129 silly addNameRange     '4.2.2',
+129 silly addNameRange     '4.3.0',
+129 silly addNameRange     '4.3.1',
+129 silly addNameRange     '4.3.2',
+129 silly addNameRange     '4.3.3',
+129 silly addNameRange     '4.3.4',
+129 silly addNameRange     '4.3.5',
+129 silly addNameRange     '4.4.0',
+129 silly addNameRange     '4.4.2',
+129 silly addNameRange     '4.5.0',
+129 silly addNameRange     '5.0.0',
+129 silly addNameRange     '4.5.1',
+129 silly addNameRange     '5.0.1',
+129 silly addNameRange     '4.5.2',
+129 silly addNameRange     '5.0.2',
+129 silly addNameRange     '4.5.3',
+129 silly addNameRange     '5.0.3',
+129 silly addNameRange     '5.0.4',
+129 silly addNameRange     '5.0.5',
+129 silly addNameRange     '5.0.6',
+129 silly addNameRange     '5.0.7',
+129 silly addNameRange     '5.0.9',
+129 silly addNameRange     '5.0.10',
+129 silly addNameRange     '5.0.11',
+129 silly addNameRange     '5.0.12',
+129 silly addNameRange     '5.0.13',
+129 silly addNameRange     '5.0.14',
+129 silly addNameRange     '5.0.15',
+129 silly addNameRange     '6.0.1',
+129 silly addNameRange     '6.0.2',
+129 silly addNameRange     '6.0.3',
+129 silly addNameRange     '6.0.4' ] ]
+130 silly addNamed glob@3.2.11
+131 verbose addNamed "3.2.11" is a plain semver version for glob
+132 verbose afterAdd /home/markus/.npm/exit/0.1.2/package/package.json written
+133 silly cache afterAdd glob@3.2.11
+134 verbose afterAdd /home/markus/.npm/glob/3.2.11/package/package.json not in flight; writing
+135 verbose afterAdd /home/markus/.npm/glob/3.2.11/package/package.json written
+136 http 304 https://registry.npmjs.org/jasmine-core
+137 verbose headers { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+137 verbose headers   via: '1.1 varnish',
+137 verbose headers   'cache-control': 'max-age=300',
+137 verbose headers   etag: '"BEIRIPJFU8OAVC0KOUI74RW3O"',
+137 verbose headers   age: '0',
+137 verbose headers   connection: 'keep-alive',
+137 verbose headers   'x-served-by': 'cache-fra1233-FRA',
+137 verbose headers   'x-cache': 'HIT',
+137 verbose headers   'x-cache-hits': '1',
+137 verbose headers   'x-timer': 'S1453027781.421722,VS0,VE714',
+137 verbose headers   vary: 'Accept' }
+138 silly get cb [ 304,
+138 silly get   { date: 'Sun, 17 Jan 2016 10:49:41 GMT',
+138 silly get     via: '1.1 varnish',
+138 silly get     'cache-control': 'max-age=300',
+138 silly get     etag: '"BEIRIPJFU8OAVC0KOUI74RW3O"',
+138 silly get     age: '0',
+138 silly get     connection: 'keep-alive',
+138 silly get     'x-served-by': 'cache-fra1233-FRA',
+138 silly get     'x-cache': 'HIT',
+138 silly get     'x-cache-hits': '1',
+138 silly get     'x-timer': 'S1453027781.421722,VS0,VE714',
+138 silly get     vary: 'Accept' } ]
+139 verbose etag https://registry.npmjs.org/jasmine-core from cache
+140 verbose get saving jasmine-core to /home/markus/.npm/registry.npmjs.org/jasmine-core/.cache.json
+141 silly resolveWithNewModule jasmine-core@2.4.1 checking installable status
+142 silly cache add args [ 'jasmine-core@~2.4.0', null ]
+143 verbose cache add spec jasmine-core@~2.4.0
+144 silly cache add parsed spec Result {
+144 silly cache add   raw: 'jasmine-core@~2.4.0',
+144 silly cache add   scope: null,
+144 silly cache add   name: 'jasmine-core',
+144 silly cache add   rawSpec: '~2.4.0',
+144 silly cache add   spec: '>=2.4.0 <2.5.0',
+144 silly cache add   type: 'range' }
+145 silly addNamed jasmine-core@>=2.4.0 <2.5.0
+146 verbose addNamed ">=2.4.0 <2.5.0" is a valid semver range for jasmine-core
+147 silly addNameRange { name: 'jasmine-core', range: '>=2.4.0 <2.5.0', hasData: false }
+148 silly mapToRegistry name jasmine-core
+149 silly mapToRegistry using default registry
+150 silly mapToRegistry registry https://registry.npmjs.org/
+151 silly mapToRegistry uri https://registry.npmjs.org/jasmine-core
+152 verbose addNameRange registry:https://registry.npmjs.org/jasmine-core not in flight; fetching
+153 verbose get https://registry.npmjs.org/jasmine-core not expired, no request
+154 silly addNameRange number 2 { name: 'jasmine-core', range: '>=2.4.0 <2.5.0', hasData: true }
+155 silly addNameRange versions [ 'jasmine-core',
+155 silly addNameRange   [ '2.0.0',
+155 silly addNameRange     '2.0.1',
+155 silly addNameRange     '2.0.4',
+155 silly addNameRange     '2.1.0',
+155 silly addNameRange     '2.1.1',
+155 silly addNameRange     '2.1.2',
+155 silly addNameRange     '2.1.3',
+155 silly addNameRange     '2.2.0',
+155 silly addNameRange     '2.3.0',
+155 silly addNameRange     '2.3.2',
+155 silly addNameRange     '2.3.3',
+155 silly addNameRange     '2.3.4',
+155 silly addNameRange     '2.4.0',
+155 silly addNameRange     '2.4.1' ] ]
+156 silly addNamed jasmine-core@2.4.1
+157 verbose addNamed "2.4.1" is a plain semver version for jasmine-core
+158 silly cache afterAdd jasmine-core@2.4.1
+159 verbose afterAdd /home/markus/.npm/jasmine-core/2.4.1/package/package.json not in flight; writing
+160 verbose afterAdd /home/markus/.npm/jasmine-core/2.4.1/package/package.json written
+161 silly fetchNamedPackageData inherits
+162 silly mapToRegistry name inherits
+163 silly mapToRegistry using default registry
+164 silly mapToRegistry registry https://registry.npmjs.org/
+165 silly mapToRegistry uri https://registry.npmjs.org/inherits
+166 silly fetchNamedPackageData minimatch
+167 silly mapToRegistry name minimatch
+168 silly mapToRegistry using default registry
+169 silly mapToRegistry registry https://registry.npmjs.org/
+170 silly mapToRegistry uri https://registry.npmjs.org/minimatch
+171 verbose request uri https://registry.npmjs.org/inherits
+172 verbose request no auth needed
+173 info attempt registry request try #1 at 11:49:42
+174 verbose etag "1BYD1KXI8UGWXPU5I6HAAL3BQ"
+175 http request GET https://registry.npmjs.org/inherits
+176 verbose request uri https://registry.npmjs.org/minimatch
+177 verbose request no auth needed
+178 info attempt registry request try #1 at 11:49:42
+179 verbose etag "4LFAQ3IFUTR8Q3IE1RPPWNQGA"
+180 http request GET https://registry.npmjs.org/minimatch
+181 http 304 https://registry.npmjs.org/inherits
+182 verbose headers { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+182 verbose headers   via: '1.1 varnish',
+182 verbose headers   'cache-control': 'max-age=300',
+182 verbose headers   etag: '"1BYD1KXI8UGWXPU5I6HAAL3BQ"',
+182 verbose headers   age: '203',
+182 verbose headers   connection: 'keep-alive',
+182 verbose headers   'x-served-by': 'cache-fra1236-FRA',
+182 verbose headers   'x-cache': 'HIT',
+182 verbose headers   'x-cache-hits': '9',
+182 verbose headers   'x-timer': 'S1453027782.352353,VS0,VE0',
+182 verbose headers   vary: 'Accept' }
+183 silly get cb [ 304,
+183 silly get   { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+183 silly get     via: '1.1 varnish',
+183 silly get     'cache-control': 'max-age=300',
+183 silly get     etag: '"1BYD1KXI8UGWXPU5I6HAAL3BQ"',
+183 silly get     age: '203',
+183 silly get     connection: 'keep-alive',
+183 silly get     'x-served-by': 'cache-fra1236-FRA',
+183 silly get     'x-cache': 'HIT',
+183 silly get     'x-cache-hits': '9',
+183 silly get     'x-timer': 'S1453027782.352353,VS0,VE0',
+183 silly get     vary: 'Accept' } ]
+184 verbose etag https://registry.npmjs.org/inherits from cache
+185 verbose get saving inherits to /home/markus/.npm/registry.npmjs.org/inherits/.cache.json
+186 http 304 https://registry.npmjs.org/minimatch
+187 verbose headers { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+187 verbose headers   via: '1.1 varnish',
+187 verbose headers   'cache-control': 'max-age=300',
+187 verbose headers   etag: '"4LFAQ3IFUTR8Q3IE1RPPWNQGA"',
+187 verbose headers   age: '4',
+187 verbose headers   connection: 'keep-alive',
+187 verbose headers   'x-served-by': 'cache-fra1247-FRA',
+187 verbose headers   'x-cache': 'HIT',
+187 verbose headers   'x-cache-hits': '1',
+187 verbose headers   'x-timer': 'S1453027782.361641,VS0,VE0',
+187 verbose headers   vary: 'Accept' }
+188 silly get cb [ 304,
+188 silly get   { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+188 silly get     via: '1.1 varnish',
+188 silly get     'cache-control': 'max-age=300',
+188 silly get     etag: '"4LFAQ3IFUTR8Q3IE1RPPWNQGA"',
+188 silly get     age: '4',
+188 silly get     connection: 'keep-alive',
+188 silly get     'x-served-by': 'cache-fra1247-FRA',
+188 silly get     'x-cache': 'HIT',
+188 silly get     'x-cache-hits': '1',
+188 silly get     'x-timer': 'S1453027782.361641,VS0,VE0',
+188 silly get     vary: 'Accept' } ]
+189 verbose etag https://registry.npmjs.org/minimatch from cache
+190 verbose get saving minimatch to /home/markus/.npm/registry.npmjs.org/minimatch/.cache.json
+191 silly resolveWithNewModule inherits@2.0.1 checking installable status
+192 silly cache add args [ 'inherits@2', null ]
+193 verbose cache add spec inherits@2
+194 silly cache add parsed spec Result {
+194 silly cache add   raw: 'inherits@2',
+194 silly cache add   scope: null,
+194 silly cache add   name: 'inherits',
+194 silly cache add   rawSpec: '2',
+194 silly cache add   spec: '>=2.0.0 <3.0.0',
+194 silly cache add   type: 'range' }
+195 silly addNamed inherits@>=2.0.0 <3.0.0
+196 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for inherits
+197 silly addNameRange { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: false }
+198 silly mapToRegistry name inherits
+199 silly mapToRegistry using default registry
+200 silly mapToRegistry registry https://registry.npmjs.org/
+201 silly mapToRegistry uri https://registry.npmjs.org/inherits
+202 verbose addNameRange registry:https://registry.npmjs.org/inherits not in flight; fetching
+203 verbose get https://registry.npmjs.org/inherits not expired, no request
+204 silly addNameRange number 2 { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: true }
+205 silly addNameRange versions [ 'inherits', [ '1.0.0', '2.0.0', '2.0.1', '1.0.1', '1.0.2' ] ]
+206 silly addNamed inherits@2.0.1
+207 verbose addNamed "2.0.1" is a plain semver version for inherits
+208 silly resolveWithNewModule minimatch@0.3.0 checking installable status
+209 silly cache add args [ 'minimatch@0.3', null ]
+210 verbose cache add spec minimatch@0.3
+211 silly cache add parsed spec Result {
+211 silly cache add   raw: 'minimatch@0.3',
+211 silly cache add   scope: null,
+211 silly cache add   name: 'minimatch',
+211 silly cache add   rawSpec: '0.3',
+211 silly cache add   spec: '>=0.3.0 <0.4.0',
+211 silly cache add   type: 'range' }
+212 silly addNamed minimatch@>=0.3.0 <0.4.0
+213 verbose addNamed ">=0.3.0 <0.4.0" is a valid semver range for minimatch
+214 silly addNameRange { name: 'minimatch', range: '>=0.3.0 <0.4.0', hasData: false }
+215 silly mapToRegistry name minimatch
+216 silly mapToRegistry using default registry
+217 silly mapToRegistry registry https://registry.npmjs.org/
+218 silly mapToRegistry uri https://registry.npmjs.org/minimatch
+219 verbose addNameRange registry:https://registry.npmjs.org/minimatch not in flight; fetching
+220 verbose get https://registry.npmjs.org/minimatch not expired, no request
+221 silly addNameRange number 2 { name: 'minimatch', range: '>=0.3.0 <0.4.0', hasData: true }
+222 silly addNameRange versions [ 'minimatch',
+222 silly addNameRange   [ '0.0.1',
+222 silly addNameRange     '0.0.2',
+222 silly addNameRange     '0.0.4',
+222 silly addNameRange     '0.0.5',
+222 silly addNameRange     '0.1.1',
+222 silly addNameRange     '0.1.2',
+222 silly addNameRange     '0.1.3',
+222 silly addNameRange     '0.1.4',
+222 silly addNameRange     '0.1.5',
+222 silly addNameRange     '0.2.0',
+222 silly addNameRange     '0.2.2',
+222 silly addNameRange     '0.2.3',
+222 silly addNameRange     '0.2.4',
+222 silly addNameRange     '0.2.5',
+222 silly addNameRange     '0.2.6',
+222 silly addNameRange     '0.2.7',
+222 silly addNameRange     '0.2.8',
+222 silly addNameRange     '0.2.9',
+222 silly addNameRange     '0.2.10',
+222 silly addNameRange     '0.2.11',
+222 silly addNameRange     '0.2.12',
+222 silly addNameRange     '0.2.13',
+222 silly addNameRange     '0.2.14',
+222 silly addNameRange     '0.3.0',
+222 silly addNameRange     '0.4.0',
+222 silly addNameRange     '1.0.0',
+222 silly addNameRange     '2.0.0',
+222 silly addNameRange     '2.0.1',
+222 silly addNameRange     '2.0.2',
+222 silly addNameRange     '2.0.3',
+222 silly addNameRange     '2.0.4',
+222 silly addNameRange     '2.0.5',
+222 silly addNameRange     '2.0.6',
+222 silly addNameRange     '2.0.7',
+222 silly addNameRange     '2.0.8',
+222 silly addNameRange     '2.0.9',
+222 silly addNameRange     '2.0.10',
+222 silly addNameRange     '3.0.0' ] ]
+223 silly addNamed minimatch@0.3.0
+224 verbose addNamed "0.3.0" is a plain semver version for minimatch
+225 silly cache afterAdd inherits@2.0.1
+226 verbose afterAdd /home/markus/.npm/inherits/2.0.1/package/package.json not in flight; writing
+227 silly cache afterAdd minimatch@0.3.0
+228 verbose afterAdd /home/markus/.npm/minimatch/0.3.0/package/package.json not in flight; writing
+229 verbose afterAdd /home/markus/.npm/inherits/2.0.1/package/package.json written
+230 verbose afterAdd /home/markus/.npm/minimatch/0.3.0/package/package.json written
+231 silly fetchNamedPackageData lru-cache
+232 silly mapToRegistry name lru-cache
+233 silly mapToRegistry using default registry
+234 silly mapToRegistry registry https://registry.npmjs.org/
+235 silly mapToRegistry uri https://registry.npmjs.org/lru-cache
+236 silly fetchNamedPackageData sigmund
+237 silly mapToRegistry name sigmund
+238 silly mapToRegistry using default registry
+239 silly mapToRegistry registry https://registry.npmjs.org/
+240 silly mapToRegistry uri https://registry.npmjs.org/sigmund
+241 verbose request uri https://registry.npmjs.org/lru-cache
+242 verbose request no auth needed
+243 info attempt registry request try #1 at 11:49:42
+244 verbose etag "A612E1QU1KQ8FT5B9WOERJD2K"
+245 http request GET https://registry.npmjs.org/lru-cache
+246 verbose request uri https://registry.npmjs.org/sigmund
+247 verbose request no auth needed
+248 info attempt registry request try #1 at 11:49:42
+249 verbose etag "1TUX00X8YEKNFED6GGWS214S3"
+250 http request GET https://registry.npmjs.org/sigmund
+251 http 304 https://registry.npmjs.org/sigmund
+252 verbose headers { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+252 verbose headers   via: '1.1 varnish',
+252 verbose headers   'cache-control': 'max-age=300',
+252 verbose headers   etag: '"1TUX00X8YEKNFED6GGWS214S3"',
+252 verbose headers   age: '22',
+252 verbose headers   connection: 'keep-alive',
+252 verbose headers   'x-served-by': 'cache-fra1244-FRA',
+252 verbose headers   'x-cache': 'HIT',
+252 verbose headers   'x-cache-hits': '2',
+252 verbose headers   'x-timer': 'S1453027782.568250,VS0,VE0',
+252 verbose headers   vary: 'Accept' }
+253 silly get cb [ 304,
+253 silly get   { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+253 silly get     via: '1.1 varnish',
+253 silly get     'cache-control': 'max-age=300',
+253 silly get     etag: '"1TUX00X8YEKNFED6GGWS214S3"',
+253 silly get     age: '22',
+253 silly get     connection: 'keep-alive',
+253 silly get     'x-served-by': 'cache-fra1244-FRA',
+253 silly get     'x-cache': 'HIT',
+253 silly get     'x-cache-hits': '2',
+253 silly get     'x-timer': 'S1453027782.568250,VS0,VE0',
+253 silly get     vary: 'Accept' } ]
+254 verbose etag https://registry.npmjs.org/sigmund from cache
+255 verbose get saving sigmund to /home/markus/.npm/registry.npmjs.org/sigmund/.cache.json
+256 silly resolveWithNewModule sigmund@1.0.1 checking installable status
+257 silly cache add args [ 'sigmund@~1.0.0', null ]
+258 verbose cache add spec sigmund@~1.0.0
+259 silly cache add parsed spec Result {
+259 silly cache add   raw: 'sigmund@~1.0.0',
+259 silly cache add   scope: null,
+259 silly cache add   name: 'sigmund',
+259 silly cache add   rawSpec: '~1.0.0',
+259 silly cache add   spec: '>=1.0.0 <1.1.0',
+259 silly cache add   type: 'range' }
+260 silly addNamed sigmund@>=1.0.0 <1.1.0
+261 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for sigmund
+262 silly addNameRange { name: 'sigmund', range: '>=1.0.0 <1.1.0', hasData: false }
+263 silly mapToRegistry name sigmund
+264 silly mapToRegistry using default registry
+265 silly mapToRegistry registry https://registry.npmjs.org/
+266 silly mapToRegistry uri https://registry.npmjs.org/sigmund
+267 verbose addNameRange registry:https://registry.npmjs.org/sigmund not in flight; fetching
+268 http 304 https://registry.npmjs.org/lru-cache
+269 verbose headers { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+269 verbose headers   via: '1.1 varnish',
+269 verbose headers   'cache-control': 'max-age=300',
+269 verbose headers   etag: '"A612E1QU1KQ8FT5B9WOERJD2K"',
+269 verbose headers   age: '198',
+269 verbose headers   connection: 'keep-alive',
+269 verbose headers   'x-served-by': 'cache-fra1240-FRA',
+269 verbose headers   'x-cache': 'HIT',
+269 verbose headers   'x-cache-hits': '6',
+269 verbose headers   'x-timer': 'S1453027782.573438,VS0,VE0',
+269 verbose headers   vary: 'Accept' }
+270 silly get cb [ 304,
+270 silly get   { date: 'Sun, 17 Jan 2016 10:49:42 GMT',
+270 silly get     via: '1.1 varnish',
+270 silly get     'cache-control': 'max-age=300',
+270 silly get     etag: '"A612E1QU1KQ8FT5B9WOERJD2K"',
+270 silly get     age: '198',
+270 silly get     connection: 'keep-alive',
+270 silly get     'x-served-by': 'cache-fra1240-FRA',
+270 silly get     'x-cache': 'HIT',
+270 silly get     'x-cache-hits': '6',
+270 silly get     'x-timer': 'S1453027782.573438,VS0,VE0',
+270 silly get     vary: 'Accept' } ]
+271 verbose etag https://registry.npmjs.org/lru-cache from cache
+272 verbose get saving lru-cache to /home/markus/.npm/registry.npmjs.org/lru-cache/.cache.json
+273 verbose get https://registry.npmjs.org/sigmund not expired, no request
+274 silly addNameRange number 2 { name: 'sigmund', range: '>=1.0.0 <1.1.0', hasData: true }
+275 silly addNameRange versions [ 'sigmund', [ '1.0.0', '1.0.1' ] ]
+276 silly addNamed sigmund@1.0.1
+277 verbose addNamed "1.0.1" is a plain semver version for sigmund
+278 silly cache afterAdd sigmund@1.0.1
+279 verbose afterAdd /home/markus/.npm/sigmund/1.0.1/package/package.json not in flight; writing
+280 silly resolveWithNewModule lru-cache@2.7.3 checking installable status
+281 silly cache add args [ 'lru-cache@2', null ]
+282 verbose cache add spec lru-cache@2
+283 silly cache add parsed spec Result {
+283 silly cache add   raw: 'lru-cache@2',
+283 silly cache add   scope: null,
+283 silly cache add   name: 'lru-cache',
+283 silly cache add   rawSpec: '2',
+283 silly cache add   spec: '>=2.0.0 <3.0.0',
+283 silly cache add   type: 'range' }
+284 silly addNamed lru-cache@>=2.0.0 <3.0.0
+285 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for lru-cache
+286 silly addNameRange { name: 'lru-cache', range: '>=2.0.0 <3.0.0', hasData: false }
+287 silly mapToRegistry name lru-cache
+288 silly mapToRegistry using default registry
+289 silly mapToRegistry registry https://registry.npmjs.org/
+290 silly mapToRegistry uri https://registry.npmjs.org/lru-cache
+291 verbose addNameRange registry:https://registry.npmjs.org/lru-cache not in flight; fetching
+292 verbose get https://registry.npmjs.org/lru-cache not expired, no request
+293 silly addNameRange number 2 { name: 'lru-cache', range: '>=2.0.0 <3.0.0', hasData: true }
+294 silly addNameRange versions [ 'lru-cache',
+294 silly addNameRange   [ '1.0.1',
+294 silly addNameRange     '1.0.2',
+294 silly addNameRange     '1.0.3',
+294 silly addNameRange     '1.0.4',
+294 silly addNameRange     '1.0.5',
+294 silly addNameRange     '1.0.6',
+294 silly addNameRange     '1.1.0',
+294 silly addNameRange     '1.1.1',
+294 silly addNameRange     '2.0.0',
+294 silly addNameRange     '2.0.1',
+294 silly addNameRange     '2.0.2',
+294 silly addNameRange     '2.0.3',
+294 silly addNameRange     '2.0.4',
+294 silly addNameRange     '2.1.0',
+294 silly addNameRange     '2.2.0',
+294 silly addNameRange     '2.2.1',
+294 silly addNameRange     '2.2.2',
+294 silly addNameRange     '2.2.4',
+294 silly addNameRange     '2.3.0',
+294 silly addNameRange     '2.3.1',
+294 silly addNameRange     '2.5.0',
+294 silly addNameRange     '2.5.1',
+294 silly addNameRange     '2.5.2',
+294 silly addNameRange     '2.6.0',
+294 silly addNameRange     '2.6.1',
+294 silly addNameRange     '2.6.2',
+294 silly addNameRange     '2.6.3',
+294 silly addNameRange     '2.6.4',
+294 silly addNameRange     '2.6.5',
+294 silly addNameRange     '2.7.0',
+294 silly addNameRange     '2.7.1',
+294 silly addNameRange     '2.7.2',
+294 silly addNameRange     '2.7.3',
+294 silly addNameRange     '3.0.0',
+294 silly addNameRange     '3.1.0',
+294 silly addNameRange     '3.1.1',
+294 silly addNameRange     '3.1.2',
+294 silly addNameRange     '3.2.0',
+294 silly addNameRange     '4.0.0' ] ]
+295 silly addNamed lru-cache@2.7.3
+296 verbose addNamed "2.7.3" is a plain semver version for lru-cache
+297 verbose afterAdd /home/markus/.npm/sigmund/1.0.1/package/package.json written
+298 silly cache afterAdd lru-cache@2.7.3
+299 verbose afterAdd /home/markus/.npm/lru-cache/2.7.3/package/package.json not in flight; writing
+300 verbose afterAdd /home/markus/.npm/lru-cache/2.7.3/package/package.json written
+301 silly loadAllDepsIntoIdealTree Finishing
+302 silly idealTree:prePrune lib
+302 silly idealTree:prePrune └─┬ jasmine@2.4.1
+302 silly idealTree:prePrune   ├── exit@0.1.2
+302 silly idealTree:prePrune   ├── glob@3.2.11
+302 silly idealTree:prePrune   ├── inherits@2.0.1
+302 silly idealTree:prePrune   ├── jasmine-core@2.4.1
+302 silly idealTree:prePrune   ├── lru-cache@2.7.3
+302 silly idealTree:prePrune   ├── minimatch@0.3.0
+302 silly idealTree:prePrune   └── sigmund@1.0.1
+303 silly loadIdealTree Finishing
+304 silly currentTree lib
+304 silly currentTree └─┬ jasmine@2.4.1
+304 silly currentTree   ├── exit@0.1.2
+304 silly currentTree   ├── glob@3.2.11
+304 silly currentTree   ├── inherits@2.0.1
+304 silly currentTree   ├── jasmine-core@2.4.1
+304 silly currentTree   ├── lru-cache@2.7.3
+304 silly currentTree   ├── minimatch@0.3.0
+304 silly currentTree   └── sigmund@1.0.1
+305 silly idealTree lib
+305 silly idealTree └─┬ jasmine@2.4.1
+305 silly idealTree   ├── exit@0.1.2
+305 silly idealTree   ├── glob@3.2.11
+305 silly idealTree   ├── inherits@2.0.1
+305 silly idealTree   ├── jasmine-core@2.4.1
+305 silly idealTree   ├── lru-cache@2.7.3
+305 silly idealTree   ├── minimatch@0.3.0
+305 silly idealTree   └── sigmund@1.0.1
+306 silly generateActionsToTake Starting
+307 silly install generateActionsToTake
+308 warn checkPermissions Missing write access to /opt/nodejs/lib/node_modules/jasmine
+309 warn checkPermissions Missing write access to /opt/nodejs/lib/node_modules
+310 silly rollbackFailedOptional Starting
+311 silly rollbackFailedOptional Finishing
+312 silly runTopLevelLifecycles Starting
+313 silly runTopLevelLifecycles Finishing
+314 silly install printInstalled
+315 verbose stack Error: EACCES: permission denied, access '/opt/nodejs/lib/node_modules/jasmine'
+315 verbose stack     at Error (native)
+316 verbose cwd /home/markus/Projekte/splitterfinder
+317 error Linux 4.2.6-301.fc23.x86_64
+318 error argv "/opt/nodejs/bin/node" "/usr/local/bin/npm" "install" "jasmine" "-g"
+319 error node v5.2.0
+320 error npm  v3.3.12
+321 error path /opt/nodejs/lib/node_modules/jasmine
+322 error code EACCES
+323 error errno -13
+324 error syscall access
+325 error Error: EACCES: permission denied, access '/opt/nodejs/lib/node_modules/jasmine'
+325 error     at Error (native)
+325 error  { [Error: EACCES: permission denied, access '/opt/nodejs/lib/node_modules/jasmine']
+325 error   errno: -13,
+325 error   code: 'EACCES',
+325 error   syscall: 'access',
+325 error   path: '/opt/nodejs/lib/node_modules/jasmine' }
+326 error Please try running this command again as root/Administrator.
+327 verbose exit [ -13, true ]

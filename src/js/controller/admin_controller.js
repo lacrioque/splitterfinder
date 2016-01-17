@@ -5,9 +5,14 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
   '$moduleServ',
   function ($scope, $rootScope, $moduleServ) {
     var module = {},
-        moduleListe = $moduleServ.getModuleList();
+        moduleListe = {}; //$moduleServ.getModuleList();
+        console.log($moduleServ);
       _.each(module, function(item, i){
-        $moduleServ.getModule(item.bezeichnung).then();
+        $moduleServ.getModule(item.bezeichnung).then(
+          function(modul){
+            module[modul.name] = modul;
+          }
+        );
       });
   }
   ]);

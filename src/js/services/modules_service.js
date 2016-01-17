@@ -1,6 +1,6 @@
 /*globals angular, console, window, q, _^, database */
 angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ', function () {
-  return function () {
+    console.log(database);
     var modulesLoaded = false,
         modules = {},
         getModule = function(moduleID){
@@ -33,6 +33,4 @@ angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ
           deleteModule: deleteModule,
           getModuleList : function(){return modules;}
         }
-        
-  };
 });

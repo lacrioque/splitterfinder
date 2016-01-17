@@ -1,20 +1,27 @@
-var encryption = require('./encryption.js'), path = require('path'), neDB = require('nedb'), _ = require('lodash'), q = require('q'), databaseExport = function () {
-    var dbpath_mods = path.join(require('nw.gui').App.dataPath, 'splitterfinder_alpha.nedb'), dbpath_chars = path.join(require('nw.gui').App.dataPath, 'splitterfinder_omega.nedb'), dbCharaktere = new neDB({
+var encryption = require('./encryption.js'), path = require('path'), neDB = require('nedb'), _ = require('lodash'), q = require('q'), 
+databaseExport = function (nwgui) {
+    var dbpath_mods = path.join(nwgui.App.dataPath, 'splitterfinder_alpha.nedb'), 
+    dbpath_chars = path.join(nwgui.App.dataPath, 'splitterfinder_omega.nedb'), 
+    dbCharaktere = new neDB({
         filename: dbpath_chars,
         autoload: true
       }), dbModule = new neDB({
         filename: dbpath_mods,
         autoload: true
-      }), getModul = function (modulBezeichnung) {
+      }), getModul = function (modulId, modulBezeichnung) {
+        modulId = modulId || null;
         var def = q.defer();
-        dbModule.find({ bezeichnung: modulBezeichnung }, function (err, document) {
+        mudulBezeichnung = modulBezeichnung || null;
+        dbModule.find({ bezeichnung: modulBezeichnung, _id: modulId }, function (err, document) {
           def.resolve(encryption.decrypt(document.modul));
         });
         return def.promise;
       }, getModuleIndex = function () {
+        var def = q.defer();
         dbModule.find({},{ bezeichnung: 1, kategorie: 1 }, function (err, document) {
           def.resolve(encryption.decrypt(document));
         });
+        return def.promise;
       }, getCharakter = function (charakterID, secure) {
         secure = secure || true;
         var def = q.defer();
@@ -53,12 +60,32 @@ var encryption = require('./encryption.js'), path = require('path'), neDB = requ
           dbModule.insert(saveObject, function (err) {
           });
         }
-      };
+      }, deleteModul = function(modul){
+        var def = q.defer();
+        dbModule.remove(modul, {}, function(err, removed){
+          if(err){
+            def.reject(err);
+          } else {
+            if(removed<0){
+              def.resolve(removed);
+            } else {
+              def.reject("Nichts zu löschen");
+            }
+          }
+        });
+      }, throwOnlyError = function(err, res){
+        if(err) {console.log(err); throw err;}
+      }
+      
+      dbModule.ensureIndex({fieldName: 'bezeichnung', unique: true}, throwOnlyError);  
+        
     return {
       getModul: getModul,
       getCharakter: getCharakter,
       saveCharakter: saveCharakter,
-      saveModul: saveModul
+      saveModul: saveModul,
+      deleteModul : deleteModul,
+      getModuleIndex: getModuleIndex
     };
   };
-module.exports = databaseExport();
+module.exports.init = databaseExport;

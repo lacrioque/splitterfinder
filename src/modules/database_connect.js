@@ -1,7 +1,7 @@
 var encryption = require('./encryption.js'), path = require('path'), neDB = require('nedb'), _ = require('lodash'), q = require('q'), 
-databaseExport = function () {
-    var dbpath_mods = path.join(require('nw.gui').App.dataPath, 'splitterfinder_alpha.nedb'), 
-    dbpath_chars = path.join(require('nw.gui').App.dataPath, 'splitterfinder_omega.nedb'), 
+databaseExport = function (nwgui) {
+    var dbpath_mods = path.join(nwgui.App.dataPath, 'splitterfinder_alpha.nedb'), 
+    dbpath_chars = path.join(nwgui.App.dataPath, 'splitterfinder_omega.nedb'), 
     dbCharaktere = new neDB({
         filename: dbpath_chars,
         autoload: true
@@ -10,16 +10,18 @@ databaseExport = function () {
         autoload: true
       }), getModul = function (modulId, modulBezeichnung) {
         modulId = modulId || null;
-        mudulBezeichnung = modulBezeichnung || null;
         var def = q.defer();
+        mudulBezeichnung = modulBezeichnung || null;
         dbModule.find({ bezeichnung: modulBezeichnung, _id: modulId }, function (err, document) {
           def.resolve(encryption.decrypt(document.modul));
         });
         return def.promise;
       }, getModuleIndex = function () {
+        var def = q.defer();
         dbModule.find({},{ bezeichnung: 1, kategorie: 1 }, function (err, document) {
           def.resolve(encryption.decrypt(document));
         });
+        return def.promise;
       }, getCharakter = function (charakterID, secure) {
         secure = secure || true;
         var def = q.defer();
@@ -82,7 +84,8 @@ databaseExport = function () {
       getCharakter: getCharakter,
       saveCharakter: saveCharakter,
       saveModul: saveModul,
-      deleteModul : deleteModul
+      deleteModul : deleteModul,
+      getModuleIndex: getModuleIndex
     };
   };
-module.exports = databaseExport();
+module.exports.init = databaseExport;
