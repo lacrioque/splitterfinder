@@ -14,5 +14,6 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
           }
         );
       });
+      $rootScope.$emit('changeDestination', { name: 'Administration' });
   }
   ]);

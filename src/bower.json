@@ -19,7 +19,8 @@
     "angular-route": "~1.4.7",
     "angular-material": "~0.11.4",
     "ngDraggable": "~0.1.8",
-    "angular-messages": "~1.4.8"
+    "angular-messages": "~1.4.8",
+    "material-design-icons": "~2.1.3"
   },
   "resolutions": {
     "angular": "1.4.8"

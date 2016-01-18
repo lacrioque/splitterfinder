@@ -20,6 +20,7 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
         module[modul.name] = modul;
       });
     });
+    $rootScope.$emit('changeDestination', { name: 'Administration' });
   }
 ]);
 /*globals angular, console, window, q, _ */
