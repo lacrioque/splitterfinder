@@ -5,6 +5,7 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
   '$moduleServ',
   function ($scope, $rootScope, $moduleServ) {
     var module = {},
+        checkValid = {},
         moduleListe = {}; //$moduleServ.getModuleList();
         console.log($moduleServ);
       _.each(module, function(item, i){
@@ -15,5 +16,10 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
         );
       });
       $rootScope.$emit('changeDestination', { name: 'Administration' });
+      checkValid.classes = "mdi-green mdi-verified";
+      checkValid.classes = "mdi-red mdi-shield";
+      checkValid.loading = "indeterminate";
+      checkValid.invalid = true;
+      $scope.checkValid = checkValid;
   }
   ]);

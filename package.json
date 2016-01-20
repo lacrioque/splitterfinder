@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "forge": "^2.3.0",
-    "fs-extra": "^0.26.2"
+    "fs-extra": "^0.26.2",
+    "rimraf": "^2.5.0"
   }
 }

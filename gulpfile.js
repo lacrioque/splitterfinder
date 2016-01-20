@@ -71,6 +71,8 @@ if(linux || all){
 
 gulp.task('default', function(done){'clearDist', runSequence(['concat', 'versioning'], 'collect-dist', 'install-deps', done);});
 
+gulp.task('renewDist', function(done){ runSequence(['concat', 'versioning'], 'collect-dist', done); });
+
 gulp.task('concat', ['services','controller', 'directives','css']);
 
 gulp.task('build', function(done){runSequence('default', 'nw', done);});
