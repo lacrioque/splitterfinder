@@ -30,8 +30,8 @@
 				<div layout='row' flex layout-fill>
 					<md-input-container flex layout-fill>
 						<label>Neues Modul</label>
-						<textarea ng-model="newModule.stringContent" flex rows="12" layout-fill>
-							\{name: "Neues Modul"\}
+						<textarea ng-model="newModule.stringContent" ng-change="validateInput()" flex rows="12" layout-fill>
+
 						</textarea>
 					</md-input-container>
 				</div>
@@ -43,13 +43,10 @@
                                 <i class="mdi mdi-24px {{checkValid.classes}}"></i>
                                 Gültiges JSON
                             </span>
-                            <div layout="row" layout-sm="column" layout-align="space-around">
-                                <md-progress-circular mode="{{checkValid.loading}}"></md-progress-circular>
-                            </div>
                             <span flex></span>
-                            <md-button class="md-flex"><i class="mdi mdi-24px mdi-plus-box"></i> Feld hinzufügen</md-button>
-                            <md-button class="md-flex"><i class="mdi mdi-24px mdi-plus-circle"></i> Metafeld hinzufügen</md-button>
-                            <md-button class="md-flex" ng-disabled="checkValid.invalid"><i class="mdi mdi-24px mdi-content-save"></i> Speichern</md-button>
+                            <md-button class="md-flex" ng-click="add_feld()"><i class="mdi mdi-24px mdi-plus-box"></i> Feld hinzufügen</md-button>
+                            <md-button class="md-flex" ng-click="add_metafeld()"><i class="mdi mdi-24px mdi-plus-circle"></i> Metafeld hinzufügen</md-button>
+                            <md-button class="md-flex" ng-click="saveModul()" ng-disabled="checkValid.invalid"><i class="mdi mdi-24px mdi-content-save"></i> Speichern</md-button>
                         </h2>
                     </md-toolbar>
 		</md-tab-body>

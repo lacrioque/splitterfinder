@@ -3,9 +3,10 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
   '$scope',
   '$rootScope',
   '$moduleServ',
-  function ($scope, $rootScope, $moduleServ) {
+  '$validateJSON',
+  function ($scope, $rootScope, $moduleServ, $validateJSON) {
     var module = {},
-        checkValid = {},
+        checkValid = $validateJSON.getProcess({validClasses: "mdi-green mdi-verified", invalidClasses : "mdi-red mdi-shield"}),
         moduleListe = {}; //$moduleServ.getModuleList();
         console.log($moduleServ);
       _.each(module, function(item, i){
@@ -15,11 +16,22 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
           }
         );
       });
+      
+      $scope.newModule = {
+          stringContent : "{name: usw...}",
+          toJSON : function(){return JSON.parse(stringContent);}
+          }
+      
       $rootScope.$emit('changeDestination', { name: 'Administration' });
-      checkValid.classes = "mdi-green mdi-verified";
-      checkValid.classes = "mdi-red mdi-shield";
-      checkValid.loading = "indeterminate";
-      checkValid.invalid = true;
       $scope.checkValid = checkValid;
+      $scope.validateInput= function(){
+          checkValid.validate($scope.newModule.stringContent);
+      };
+      $scope.addFeld = function(){
+          
+      };
+      $scope.addMetafeld = function(){};
+      $scope.saveModul = function(){};
+      
   }
   ]);
