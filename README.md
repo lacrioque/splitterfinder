@@ -16,7 +16,7 @@ Funktionierende Versionen gibt es unter Releases, wer sich versuchen mag kann da
 Etwas einarbeitung in gulp und nw.js ist von Vorteil.
 
 ##Lizenz 
- GPLv2.0
+ GPLv3.0
 
 ##Splittermond
 
