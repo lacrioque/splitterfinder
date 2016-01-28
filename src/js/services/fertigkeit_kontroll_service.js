@@ -248,14 +248,38 @@ angular.module('splitterfinder.services.fertigkeitenKontrollService', [])
                     ]
                 }
             },
+            kampffertigkeitenListe= [
+                "handgemenge", 
+                "hiebwaffen", 
+                "kettenwaffen", 
+                "klingenwaffen", 
+                "stangenwaffen", 
+                "schusswaffen", 
+                "wurfwaffen" 
+            ],
+            kampffertigkeitenObjListe: {
+                handgemenge: '',
+                hiebwaffen: '',
+                kettenwaffen: '',
+                klingenwaffen: '',
+                stangenwaffen: '',
+                schusswaffen: '',
+                wurfwaffen: ''
+            },
             getFertigkeitenList = function(){ return fertigkeiten_array;},
             getFertigkeitenObjekteList = function(){ return fertigkeiten_obj;},
             getFertigkeit = function(bezeichnung){ return fertigkeiten_obj[bezeichnung];};
+            getKampfFertigkeitenList = function(){ return kampffertigkeitenListe;},
+            getKampfFertigkeitenObjekteList = function(){ return kampffertigkeitenObjListe;},
+            getKampfFertigkeit = function(bezeichnung){ return kampffertigkeitenObjListe[bezeichnung];};
     
         return {
             getFertigkeitenList : getFertigkeitenList,
             getFertigkeitenObjekteList : getFertigkeitenObjekteList,
-            getFertigkeit : getFertigkeitenList
+            getFertigkeit : getFertigkeit
+            getKampfFertigkeitenList : getKampfFertigkeitenList,
+            getKampfFertigkeitenObjekteList : getKampfFertigkeitenObjekteList,
+            getKampfFertigkeit : getKampfFertigkeit
         };          
                     
     }

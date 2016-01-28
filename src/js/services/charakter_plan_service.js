@@ -1,56 +1,16 @@
 /*globals angular, console, window, q, _^, database */
-angular.module('splitterfinder.services.charakterPlanService', []).factory('$charPlanServ', function () {
+angular.module('splitterfinder.services.charakterPlanService', [])
+.factory('$charPlanServ', [
+    '$fertigkeitCtrlServ',
+    '$ressourcenCtrlServ',
+    function (
+        $fertigkeitCtrlServ,
+        $ressourcenCtrlServ
+    ) {
     var fieldList = {
-            fertigkeiten: [
-                "akrobatik",
-                "alchemie",
-                "anfuehren",
-                "arkaneKunde",
-                "athletik",
-                "darbietung",
-                "diplomatie",
-                "edelhandwerk",
-                "empathie",
-                "entschlossenheit",
-                "fingerfertigkeit",
-                "geschichteUndMythen",
-                "handwerk",
-                "heilkunde",
-                "heimlichkeit",
-                "jagdkunst",
-                "laenderkunde",
-                "naturkunde",
-                "redegewandtheit",
-                "schloesserUndFallen",
-                "schwimmen",
-                "seefahrt",
-                "strassenkunde",
-                "tierfuehrung",
-                "ueberleben",
-                "wahrnehmung",
-                "zaehigkeit"
-            ],
-            ressourcen: [
-                'ansehen',
-                'gefolge',
-                'kontakte',
-                'kreatur',
-                'mentor',
-                'rang',
-                'relikt',
-                'stand',
-                'vermoegen',
-                'zuflucht'
-            ],
-            kampffertigkeiten: [
-                "handgemenge", 
-                "hiebwaffen", 
-                "kettenwaffen", 
-                "klingenwaffen", 
-                "stangenwaffen", 
-                "schusswaffen", 
-                "wurfwaffen" 
-            ],
+            fertigkeiten: [],
+            ressourcen: [],
+            kampffertigkeiten: [],
         },
         metaFieldList = [
             'fertigkeiten',
@@ -60,9 +20,10 @@ angular.module('splitterfinder.services.charakterPlanService', []).factory('$cha
             'zauberschulen',
             'zauber'
         ],
-        getFields = function(){},
-        getMetaFields = function(){},
-        checkFieldValid = function(field){},
+        getFields = function(){return fieldList;},
+        getMetaFields = function(){ return metaFieldList;},
+        /* @todo Feldvalidaton programmieren */
+        checkFieldValid = function(field){return true;},
         checkMetaFieldValid = function(metaField){},
         translateMetaToSelect = function(metaFromModule){},
         getFieldsFromType = function(type){};
@@ -75,4 +36,4 @@ angular.module('splitterfinder.services.charakterPlanService', []).factory('$cha
             translateMetaToSelect : translateMetaToSelect,
             getFieldsFromType : getFieldsFromType
         };
-});
+}]);

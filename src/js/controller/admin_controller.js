@@ -8,7 +8,6 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
     var module = {},
         checkValid = $validateJSON.getProcess({validClasses: "mdi-green mdi-verified", invalidClasses : "mdi-red mdi-shield"}),
         moduleListe = {}; //$moduleServ.getModuleList();
-        console.log($moduleServ);
       _.each(module, function(item, i){
         $moduleServ.getModule(item.bezeichnung).then(
           function(modul){
@@ -19,7 +18,7 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
       
       $scope.newModule = {
           stringContent : "{name: usw...}",
-          toJSON : function(){return JSON.parse(stringContent);}
+          toJSON : function(){return JSON.parse( this.stringContent );}
           }
       
       $rootScope.$emit('changeDestination', { name: 'Administration' });
