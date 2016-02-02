@@ -64,4 +64,5 @@ angular.module('splitterfinder.services.ressourcenKontrollService', [])
             getRessourceObjList : getRessourceObjList,
             getRessource: getRessource
         };
-}]);
+}
+);

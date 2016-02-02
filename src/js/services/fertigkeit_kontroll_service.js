@@ -248,7 +248,7 @@ angular.module('splitterfinder.services.fertigkeitenKontrollService', [])
                     ]
                 }
             },
-            kampffertigkeitenListe= [
+            kampffertigkeitenListe = [
                 "handgemenge", 
                 "hiebwaffen", 
                 "kettenwaffen", 
@@ -257,18 +257,19 @@ angular.module('splitterfinder.services.fertigkeitenKontrollService', [])
                 "schusswaffen", 
                 "wurfwaffen" 
             ],
-            kampffertigkeitenObjListe: {
-                handgemenge: '',
-                hiebwaffen: '',
-                kettenwaffen: '',
-                klingenwaffen: '',
-                stangenwaffen: '',
-                schusswaffen: '',
-                wurfwaffen: ''
+            kampffertigkeitenObjListe = {
+                'handgemenge' : '',
+                'hiebwaffen' : '',
+                'kettenwaffen' : '',
+                'klingenwaffen' : '',
+                'stangenwaffen' : '',
+                'schusswaffen' : '',
+                'wurfwaffen' : ''
             },
+            
             getFertigkeitenList = function(){ return fertigkeiten_array;},
             getFertigkeitenObjekteList = function(){ return fertigkeiten_obj;},
-            getFertigkeit = function(bezeichnung){ return fertigkeiten_obj[bezeichnung];};
+            getFertigkeit = function(bezeichnung){ return fertigkeiten_obj[bezeichnung];},
             getKampfFertigkeitenList = function(){ return kampffertigkeitenListe;},
             getKampfFertigkeitenObjekteList = function(){ return kampffertigkeitenObjListe;},
             getKampfFertigkeit = function(bezeichnung){ return kampffertigkeitenObjListe[bezeichnung];};
@@ -276,7 +277,7 @@ angular.module('splitterfinder.services.fertigkeitenKontrollService', [])
         return {
             getFertigkeitenList : getFertigkeitenList,
             getFertigkeitenObjekteList : getFertigkeitenObjekteList,
-            getFertigkeit : getFertigkeit
+            getFertigkeit : getFertigkeit,
             getKampfFertigkeitenList : getKampfFertigkeitenList,
             getKampfFertigkeitenObjekteList : getKampfFertigkeitenObjekteList,
             getKampfFertigkeit : getKampfFertigkeit
