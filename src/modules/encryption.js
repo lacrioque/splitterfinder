@@ -1,5 +1,14 @@
-var key_string = 'Spl1tterfind3r4Life', forge = require('node-forge'), fs = require('fs-extra'), salt = forge.random.getBytesSync(128), key = forge.pkcs5.pbkdf2(key_string, salt, 5, 16), sf_encryption = function () {
-    var encrypt = function (object) {
+var forge = require('node-forge'), fs = require('fs-extra'), 
+sf_encryption = function () {
+    var key_string = 'Spl1tterfind3r4Life',
+        salt = forge.random.getBytesSync(128), 
+        createKey =function(){
+            var hash = forge.md.sha512.sha256.create();
+                hash.update(key_string);
+                return hash.digest().toHex();
+        },
+        key = forge.pkcs5.pbkdf2(createKey(), salt, 5, 16),
+        encrypt = function (object) {
         var object_plain, iv = forge.random.getBytesSync(8), cipher = forge.cipher.createCipher('AES-ECB', key), output, buffer;
         try {
           object_plain = JSON.stringify(object);
