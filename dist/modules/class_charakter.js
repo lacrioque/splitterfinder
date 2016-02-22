@@ -3,7 +3,7 @@
  * aus diesem kann man nachher den CharakterBogen befüllen
  * 
  */
-var sfcrypto = require('./encryption.js'), _ = require('lodash'), calculation = require('./claculate_values.js'), CHARAKTER = function (charakterObjekt) {
+var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calculation = require('./modules/calculate_values.js'), CHARAKTER = function (charakterObjekt) {
     charakterObjekt = charakterObjekt || {};
     var __charakter = {
         id: '',

@@ -1,4 +1,5 @@
 /*globals angular, console, window, q, _ */
+"use strict";
 angular.module('splitterfinder', [
   'ngMaterial',
   'ngRoute',
@@ -19,4 +20,7 @@ angular.module('splitterfinder', [
   });
 }).config(function ($mdThemingProvider) {
   $mdThemingProvider.theme('default').primaryPalette('amber').accentPalette('deep-orange').warnPalette('red').backgroundPalette('amber');
+}).run(function(){
+    let nw = require('nw.gui');
+    nw.Window.get().showDevTools();
 });

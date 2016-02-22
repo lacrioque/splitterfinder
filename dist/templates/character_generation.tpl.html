@@ -21,15 +21,21 @@
           <div layout='column' flex layout-fill>
             <md-input-container class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
               <label>Kultur</label>
-              <md-select name='modul_kategorie_kultur' id='kulturselect' ng-options='kultur as kultur.bezeichnung for kultur in kulturen' ></md-select>
+              <md-select name='modul_kategorie_kultur' id='kulturselect' ng-model='charakter.kultur' >
+                  <option ng-repeat="kultur in kulturen" value="kultur.bezeichnung">{{kultur.bezeichnung}}</option>
+              </md-select>
             </md-input-container>
             <md-input-container class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
               <label>Ausbildung</label>
-              <md-select name='modul_kategorie_ausbildung' id='ausbildungselect' ng-options='ausbildung as ausbildung.bezeichnung for ausbildung in ausbildungen' ></md-select>
+              <md-select name='modul_kategorie_ausbildung' id='ausbildungselect' ng-model='charakter.ausbildung'' >
+                  <option ng-repeat="ausbildung in ausbildungen" value="ausbildung.bezeichnung">{{ausbildung.bezeichnung}}</option>
+              </md-select>
             </md-input-container>
             <md-input-container class='modulauswahl_container' flex layout-gt-lg='column' layout='row'>
               <label>Abstammung</label>
-              <md-select name='modul_kategorie_abstammung' id='abstammungselect' ng-options='abstammung as abstammung.bezeichnung for abstammung in abstammungen' ></md-select>
+              <md-select name='modul_kategorie_abstammung' id='abstammungselect' ng-model='charakter.abstammung' >
+                   <option ng-repeat="abstammung in abstammungen" value="abstammung.bezeichnung">{{abstammung.bezeichnung}}</option>
+              </md-select>
             </md-input-container>
           </div>
         </md-tab-body>

@@ -1,4 +1,5 @@
 /*globals angular, console, window, q, _ */
+"use strict";
 angular.module('splitterfinder.services', [
 	'splitterfinder.services.stubService',
 	'splitterfinder.services.moduleService',

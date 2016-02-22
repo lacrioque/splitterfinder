@@ -1,5 +1,8 @@
-/*globals angular, console, window, q, _^, database */
+/*globals angular, console, window, q, _^ */
 angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ', function () {
+    const 
+        nwgui = require('nw.gui'),
+        database = require('./modules/database_connect.js').init(nwgui);
     console.log(database);
     var modulesLoaded = false,
         modules = {},

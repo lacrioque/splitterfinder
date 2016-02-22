@@ -1,4 +1,5 @@
 /*globals angular, console, window, q, _ */
+'use strict';
 angular.module('splitterfinder.services', [
   'splitterfinder.services.stubService',
   'splitterfinder.services.moduleService',
@@ -10,81 +11,43 @@ angular.module('splitterfinder.services', [
   'splitterfinder.services.validateJSONInputService'
 ]);
 /*globals angular, console, window, q, _^, database */
-angular.module('splitterfinder.services.charakterPlanService', []).factory('$charPlanServ', function () {
-  var fieldList = {
-      fertigkeiten: [
-        'akrobatik',
-        'alchemie',
-        'anfuehren',
-        'arkaneKunde',
-        'athletik',
-        'darbietung',
-        'diplomatie',
-        'edelhandwerk',
-        'empathie',
-        'entschlossenheit',
-        'fingerfertigkeit',
-        'geschichteUndMythen',
-        'handwerk',
-        'heilkunde',
-        'heimlichkeit',
-        'jagdkunst',
-        'laenderkunde',
-        'naturkunde',
-        'redegewandtheit',
-        'schloesserUndFallen',
-        'schwimmen',
-        'seefahrt',
-        'strassenkunde',
-        'tierfuehrung',
-        'ueberleben',
-        'wahrnehmung',
-        'zaehigkeit'
-      ],
-      ressourcen: [
-        'ansehen',
-        'gefolge',
-        'kontakte',
-        'kreatur',
-        'mentor',
-        'rang',
-        'relikt',
-        'stand',
-        'vermoegen',
-        'zuflucht'
-      ],
-      kampffertigkeiten: [
-        'handgemenge',
-        'hiebwaffen',
-        'kettenwaffen',
-        'klingenwaffen',
-        'stangenwaffen',
-        'schusswaffen',
-        'wurfwaffen'
-      ]
-    }, metaFieldList = [
-      'fertigkeiten',
-      'ressourcen',
-      'kampffertigkeiten',
-      'staerken',
-      'zauberschulen',
-      'zauber'
-    ], getFields = function () {
-    }, getMetaFields = function () {
-    }, checkFieldValid = function (field) {
-    }, checkMetaFieldValid = function (metaField) {
-    }, translateMetaToSelect = function (metaFromModule) {
-    }, getFieldsFromType = function (type) {
+angular.module('splitterfinder.services.charakterPlanService', []).factory('$charPlanServ', [
+  '$fertigkeitCtrlServ',
+  '$ressourcenCtrlServ',
+  function ($fertigkeitCtrlServ, $ressourcenCtrlServ) {
+    var fieldList = {
+        fertigkeiten: [],
+        ressourcen: [],
+        kampffertigkeiten: []
+      }, metaFieldList = [
+        'fertigkeiten',
+        'ressourcen',
+        'kampffertigkeiten',
+        'staerken',
+        'zauberschulen',
+        'zauber'
+      ], getFields = function () {
+        return fieldList;
+      }, getMetaFields = function () {
+        return metaFieldList;
+      },
+      /* @todo Feldvalidaton programmieren */
+      checkFieldValid = function (field) {
+        return true;
+      }, checkMetaFieldValid = function (metaField) {
+      }, translateMetaToSelect = function (metaFromModule) {
+      }, getFieldsFromType = function (type) {
+      };
+    return {
+      getFields: getFields,
+      getMetaFields: getMetaFields,
+      checkFieldValid: checkFieldValid,
+      checkMetaFieldValid: checkMetaFieldValid,
+      translateMetaToSelect: translateMetaToSelect,
+      getFieldsFromType: getFieldsFromType
     };
-  return {
-    getFields: getFields,
-    getMetaFields: getMetaFields,
-    checkFieldValid: checkFieldValid,
-    checkMetaFieldValid: checkMetaFieldValid,
-    translateMetaToSelect: translateMetaToSelect,
-    getFieldsFromType: getFieldsFromType
-  };
-});
+  }
+]);
 /*globals angular, console, window, q, _^, database */
 angular.module('splitterfinder.services.fertigkeitenKontrollService', []).factory('$fertigkeitCtrlServ', function () {
   var fertigkeiten_array = [
@@ -333,21 +296,47 @@ angular.module('splitterfinder.services.fertigkeitenKontrollService', []).factor
           'WIL'
         ]
       }
+    }, kampffertigkeitenListe = [
+      'handgemenge',
+      'hiebwaffen',
+      'kettenwaffen',
+      'klingenwaffen',
+      'stangenwaffen',
+      'schusswaffen',
+      'wurfwaffen'
+    ], kampffertigkeitenObjListe = {
+      'handgemenge': '',
+      'hiebwaffen': '',
+      'kettenwaffen': '',
+      'klingenwaffen': '',
+      'stangenwaffen': '',
+      'schusswaffen': '',
+      'wurfwaffen': ''
     }, getFertigkeitenList = function () {
       return fertigkeiten_array;
     }, getFertigkeitenObjekteList = function () {
       return fertigkeiten_obj;
     }, getFertigkeit = function (bezeichnung) {
       return fertigkeiten_obj[bezeichnung];
+    }, getKampfFertigkeitenList = function () {
+      return kampffertigkeitenListe;
+    }, getKampfFertigkeitenObjekteList = function () {
+      return kampffertigkeitenObjListe;
+    }, getKampfFertigkeit = function (bezeichnung) {
+      return kampffertigkeitenObjListe[bezeichnung];
     };
   return {
     getFertigkeitenList: getFertigkeitenList,
     getFertigkeitenObjekteList: getFertigkeitenObjekteList,
-    getFertigkeit: getFertigkeitenList
+    getFertigkeit: getFertigkeit,
+    getKampfFertigkeitenList: getKampfFertigkeitenList,
+    getKampfFertigkeitenObjekteList: getKampfFertigkeitenObjekteList,
+    getKampfFertigkeit: getKampfFertigkeit
   };
 });
-/*globals angular, console, window, q, _^, database */
+/*globals angular, console, window, q, _^ */
 angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ', function () {
+  const nwgui = require('nw.gui'), database = require('./modules/database_connect.js').init(nwgui);
   console.log(database);
   var modulesLoaded = false, modules = {}, getModule = function (moduleID) {
       database.getModul(null, moduleID);
@@ -378,8 +367,72 @@ angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ
     }
   };
 });
-/*globals angular, console, window, q, _^, database */
+/* globals angular, console, window, q, _^, database */
 angular.module('splitterfinder.services.ressourcenKontrollService', []).factory('$ressourcenCtrlServ', function () {
+  var ressourcenList = [
+      'ansehen',
+      'gefolge',
+      'kontakte',
+      'kreatur',
+      'mentor',
+      'rang',
+      'relikt',
+      'stand',
+      'vermoegen',
+      'zuflucht'
+    ], ressourceObjList = {
+      'ansehen': {
+        wert: '',
+        bedeutung: ''
+      },
+      'gefolge': {
+        wert: '',
+        bedeutung: ''
+      },
+      'kontakte': {
+        wert: '',
+        bedeutung: ''
+      },
+      'kreatur': {
+        wert: '',
+        bedeutung: ''
+      },
+      'mentor': {
+        wert: '',
+        bedeutung: ''
+      },
+      'rang': {
+        wert: '',
+        bedeutung: ''
+      },
+      'relikt': {
+        wert: '',
+        bedeutung: ''
+      },
+      'stand': {
+        wert: '',
+        bedeutung: ''
+      },
+      'vermoegen': {
+        wert: '',
+        bedeutung: ''
+      },
+      'zuflucht': {
+        wert: '',
+        bedeutung: ''
+      }
+    }, getRessourcenList = function () {
+      return ressourcenList;
+    }, getRessourceObjList = function () {
+      return ressourceObjList;
+    }, getRessource = function (bezeichnung) {
+      return ressourceObjList[bezeichnung];
+    };
+  return {
+    getRessourcenList: getRessourcenList,
+    getRessourceObjList: getRessourceObjList,
+    getRessource: getRessource
+  };
 });
 /*globals angular, console, window, q, _ */
 angular.module('splitterfinder.services.stubService', []).factory('stubService', function () {
@@ -459,4 +512,202 @@ angular.module('splitterfinder.services.validateJSONInputService', []).factory('
 
 /*globals angular, console, window, q, _^, database */
 angular.module('splitterfinder.services.zauberKontrollService', []).factory('$zauberCtrlServ', function () {
+  var zauberschulenListe = [
+      'Bann',
+      'Beherrschung',
+      'Bewegung',
+      'Erkenntnis',
+      'Fels',
+      'Feuer',
+      'Heilung',
+      'Illusion',
+      'Kampf',
+      'Licht',
+      'Natur',
+      'Schatten',
+      'Schicksal',
+      'Schutz',
+      'Stärkung',
+      'Tod',
+      'Verwandlung',
+      'Wasser',
+      'Wind'
+    ], zauberschulenObjListe = {
+      'Bann': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'WIL'
+        ]
+      },
+      'Beherrschung': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'WIL'
+        ]
+      },
+      'Bewegung': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'BEW'
+        ]
+      },
+      'Erkenntnis': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'VER'
+        ]
+      },
+      'Fels': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'KON'
+        ]
+      },
+      'Feuer': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'AUS'
+        ]
+      },
+      'Heilung': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'AUS'
+        ]
+      },
+      'Illusion': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'AUS'
+        ]
+      },
+      'Kampf': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'STA'
+        ]
+      },
+      'Licht': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'AUS'
+        ]
+      },
+      'Natur': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'AUS'
+        ]
+      },
+      'Schatten': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'INT'
+        ]
+      },
+      'Schicksal': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'AUS'
+        ]
+      },
+      'Schutz': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'AUS'
+        ]
+      },
+      'Stärkung': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'STA'
+        ]
+      },
+      'Tod': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'VER'
+        ]
+      },
+      'Verwandlung': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'KON'
+        ]
+      },
+      'Wasser': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'INT'
+        ]
+      },
+      'Wind': {
+        wert: '',
+        punkte: '',
+        attr: [
+          'MYS',
+          'VER'
+        ]
+      }
+    },
+    /*
+
+        */
+    zauberListe = [], zauberObjListe = {}, getZauberListe = function () {
+      return zauberListe;
+    }, getZauberObjListe = function () {
+      return zauberObjListe;
+    }, getZauber = function (bezeichnung) {
+      return zauberObjListe[bezeichnung];
+    }, getZauberschuleListe = function () {
+      return zauberschulenListe;
+    }, getZauberschuleObjListe = function () {
+      return zauberschulenObjListe;
+    }, getZauberschule = function (bezeichnung) {
+      return zauberschulenObjListe[bezeichnung];
+    };
+  return {
+    getZauberListe: getZauberListe,
+    getZauberObjListe: getZauberObjListe,
+    getZauber: getZauber,
+    getZauberschuleListe: getZauberschuleListe,
+    getZauberschuleObjListe: getZauberschuleObjListe,
+    getZauberschule: getZauberschule
+  };
 });
