@@ -1,4 +1,5 @@
 /*globals angular, console, window, q, _ */
+'use strict';
 angular.module('splitterfinder.controller', [
   'splitterfinder.controller.mainController',
   'splitterfinder.controller.mainViewController',
@@ -13,10 +14,7 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
   '$moduleServ',
   '$validateJSON',
   function ($scope, $rootScope, $moduleServ, $validateJSON) {
-    var module = {}, checkValid = $validateJSON.getProcess({
-        validClasses: 'mdi-green mdi-verified',
-        invalidClasses: 'mdi-red mdi-shield'
-      }), moduleListe = {};
+    var module = {}, checkValid = $validateJSON.getProcess({}), moduleListe = {};
     //$moduleServ.getModuleList();
     _.each(module, function (item, i) {
       $moduleServ.getModule(item.bezeichnung).then(function (modul) {
@@ -67,7 +65,19 @@ angular.module('splitterfinder.controller.mainController', []).controller('mainC
 angular.module('splitterfinder.controller.mainViewController', []).controller('mainViewCtrl', [
   '$scope',
   '$rootScope',
-  function ($scope, $rootScope) {
+  '$charViewServ',
+  function ($scope, $rootScope, $charViewServ) {
+    $scope.keineCharaktere = true;
+    $scope.charaktere = [];
+    $charViewServ.getAllCharakter().then(function (result) {
+      console.log(result);
+      $scope.charaktere = result;
+      if (result.length > 0) {
+        $scope.keineCharaktere = false;
+      }
+    }, function (err) {
+      console.log(err);
+    });
     $scope.willkommen = 'Keine Charaktere geladen';
     $rootScope.$emit('changeDestination', { name: 'Charakteransicht' });
   }

@@ -2,8 +2,8 @@
 angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ', function () {
     const 
         nwgui = require('nw.gui'),
-        database = require('./modules/database_connect.js').init(nwgui);
-    console.log(database);
+        database = require('./modules/database_connect.js');
+        
     var modulesLoaded = false,
         modules = {},
         getModule = function(moduleID){
@@ -27,7 +27,9 @@ angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ
           getModuleIndex();
           return ret;
         };
+        
         getModuleIndex();
+        
         return {
           getModule: getModule,
           decryptModule: decryptModule,

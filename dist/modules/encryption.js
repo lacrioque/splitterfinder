@@ -36,14 +36,7 @@ const
                     object;
                 object_buffer = new Buffer(hex, 'hex');
                 binary = object_buffer.toString('binary');
-                try{
                 object = privateKey.decrypt(binary);
-                } catch(e){
-                    if (e) {
-                        console.log(e);
-                        throw e;
-                    }
-                }
                 try {
                     object = JSON.parse(object);
                 } catch (e) {

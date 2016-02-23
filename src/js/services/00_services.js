@@ -8,5 +8,7 @@ angular.module('splitterfinder.services', [
     'splitterfinder.services.zauberKontrollService',
     'splitterfinder.services.staerkenKontrollService',
 	'splitterfinder.services.charakterPlanService',
+	'splitterfinder.services.charakterViewService',
+	'splitterfinder.services.charakterGenerationService',
 	'splitterfinder.services.validateJSONInputService'
 	]);

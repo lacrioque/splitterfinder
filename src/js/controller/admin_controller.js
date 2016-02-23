@@ -6,7 +6,7 @@ angular.module('splitterfinder.controller.adminController', []).controller('admi
   '$validateJSON',
   function ($scope, $rootScope, $moduleServ, $validateJSON) {
     var module = {},
-        checkValid = $validateJSON.getProcess({validClasses: "mdi-green mdi-verified", invalidClasses : "mdi-red mdi-shield"}),
+        checkValid = $validateJSON.getProcess({}),
         moduleListe = {}; //$moduleServ.getModuleList();
       _.each(module, function(item, i){
         $moduleServ.getModule(item.bezeichnung).then(

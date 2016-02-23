@@ -11,5 +11,5 @@ pdf = require('./modules/pdf_generation.js');
 
 require('./modules/genkey.js').then(
     function(){
-         require('./modules/database_connect.js').init(nwgui);
+         require('./modules/database_connect.js');
     });

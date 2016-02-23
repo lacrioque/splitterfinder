@@ -385,7 +385,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
         if (selector.isArray()) {
           if (selector.length = 2) {
             if (__charakter[selector[0]][selector[1]] === undefined) {
-              return {
+              throw {
                 error: 'SelectorError',
                 desc: 'Dieser Selektor existiert nicht'
               };
@@ -393,7 +393,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
             __charakter[selector[0]][selector[1]] = wert;
           } else if (selector.length = 3) {
             if (__charakter[selector[0]][selector[1]][selector[2]] === undefined) {
-              return {
+              throw {
                 error: 'SelectorError',
                 desc: 'Dieser Selektor existiert nicht'
               };
@@ -402,7 +402,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
           }
         } else {
           if (__charakter[selector] === undefined) {
-            return {
+            throw {
               error: 'SelectorError',
               desc: 'Dieser Selektor existiert nicht'
             };
@@ -418,7 +418,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
 	 */
       waffeHinzufuegen = function (name, waffeObjekt) {
         if (_.size(waffeObjekt) !== 5) {
-          return {
+          throw {
             error: 'TypeError',
             desc: 'Nicht genug/zu viele Einträge'
           };
@@ -432,7 +432,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
 	 */
       ruestungHinzufuegen = function (name, ruestungObjekt) {
         if (_.size(ruestungObjekt) !== 4) {
-          return {
+          throw {
             error: 'TypeError',
             desc: 'Nicht genug/zu viele Einträge'
           };
@@ -446,7 +446,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
 	 */
       schildHinzufuegen = function (name, schildObjekt) {
         if (_.size(schildObjekt) !== 3) {
-          return {
+          throw {
             error: 'TypeError',
             desc: 'Nicht genug/zu viele Einträge'
           };
@@ -461,7 +461,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
 	 */
       zauberHinzufuegen = function (name, zauberObjekt) {
         if (_.size(zauberObjekt) !== 9) {
-          return {
+          throw {
             error: 'TypeError',
             desc: 'Nicht genug/zu viele Einträge'
           };
@@ -474,7 +474,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
 	 */
       staerkenHinzufuegen = function (name, staerkeObjekt) {
         if (_.size(staerkeObjekt) !== 3) {
-          return {
+          throw {
             error: 'TypeError',
             desc: 'Nicht genug/zu viele Einträge'
           };
@@ -503,7 +503,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
         var charakterObjekt;
         if (secure) {
           if (typeof charakterObjekt !== 'string') {
-            return {
+            throw {
               error: 'TypeError',
               desc: 'Erwartet wurde ein HexString'
             };
@@ -511,7 +511,7 @@ var sfcrypto = require('./modules/encryption.js'), _ = require('lodash'), calcul
           charakterObjekt = sfcrypto.decrypt(charakterInput);
         }
         if (typeof charakterObjekt !== 'object') {
-          return {
+          throw {
             error: 'TypeError',
             desc: 'Erwartet wurde ein charakterObjekt'
           };

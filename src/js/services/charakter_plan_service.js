@@ -3,9 +3,11 @@ angular.module('splitterfinder.services.charakterPlanService', [])
 .factory('$charPlanServ', [
     '$fertigkeitCtrlServ',
     '$ressourcenCtrlServ',
+    '$zauberCtrlServ',
     function (
         $fertigkeitCtrlServ,
-        $ressourcenCtrlServ
+        $ressourcenCtrlServ,
+        $zauberCtrlServ
     ) {
     var fieldList = {
             fertigkeiten: [],

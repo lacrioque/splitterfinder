@@ -8,6 +8,7 @@ angular.module('splitterfinder.services', [
   'splitterfinder.services.zauberKontrollService',
   'splitterfinder.services.staerkenKontrollService',
   'splitterfinder.services.charakterPlanService',
+  'splitterfinder.services.charakterViewService',
   'splitterfinder.services.validateJSONInputService'
 ]);
 /*globals angular, console, window, q, _^, database */
@@ -48,6 +49,24 @@ angular.module('splitterfinder.services.charakterPlanService', []).factory('$cha
     };
   }
 ]);
+/*globals angular, console, window, q, _ */
+angular.module('splitterfinder.services.charakterViewService', []).factory('$charViewServ', [function () {
+    const nwgui = require('nw.gui'), database = require('./modules/database_connect.js'), getAllCharakter = function () {
+        return q.fcall(function () {
+          return [{
+              name: 'Ein Charaktern',
+              ausbildung: 'Eine ausbildung',
+              kultur: 'eine Kultur'
+            }];
+        });  //return database.getAllCharakter(false);
+      }, getCharakter = function (id) {
+        return database.getCharakter(id, false);
+      };
+    return {
+      getAllCharakter: getAllCharakter,
+      getCharakter: getCharakter
+    };
+  }]);
 /*globals angular, console, window, q, _^, database */
 angular.module('splitterfinder.services.fertigkeitenKontrollService', []).factory('$fertigkeitCtrlServ', function () {
   var fertigkeiten_array = [
@@ -336,7 +355,7 @@ angular.module('splitterfinder.services.fertigkeitenKontrollService', []).factor
 });
 /*globals angular, console, window, q, _^ */
 angular.module('splitterfinder.services.moduleService', []).factory('$moduleServ', function () {
-  const nwgui = require('nw.gui'), database = require('./modules/database_connect.js').init(nwgui);
+  const nwgui = require('nw.gui'), database = require('./modules/database_connect.js');
   console.log(database);
   var modulesLoaded = false, modules = {}, getModule = function (moduleID) {
       database.getModul(null, moduleID);
