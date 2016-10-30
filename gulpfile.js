@@ -5,9 +5,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
 	install = require("gulp-install"),
-    minifyCss = require('gulp-minify-css'),
+    sass = require('gulp-sass'),
     webserver = require('gulp-webserver'),
-    fixmyjs = require('gulp-fixmyjs'),
 	sh = require('shelljs'),
     rimraf = require('rimraf'),
     fs = require('fs'),
@@ -81,31 +80,12 @@ gulp.task('serve', function(done){runSequence('default', 'serve_dist', done);});
 
 gulp.task('run',function(done){
         if(build){
-            runSequence('default', 'nw-run', done);
+            runSequence('default', 'electron', done);
         } else {
             runSequence('nw-run', done);
         }
 });
 
-gulp.task('beautifySrc', function(done){
-    async.parallel([
-        function(end){
-            gulp.src(["./src/modules/*.js"])
-            .pipe(fixmyjs({
-                globals : "module, require, console",
-                node : true
-            }))
-            .on('end', end);
-        },
-        function(end){
-            gulp.src(["./src/js/*.js"])
-            .pipe(fixmyjs({
-                globals : "angular, require, console",
-                node : true
-            }))
-            .on('end', end);
-        }], done);
-});
 
 gulp.task('clearDist', function(done){
    rimraf('./dist/*', done); 
@@ -113,40 +93,35 @@ gulp.task('clearDist', function(done){
 
 gulp.task('services', function(done){
     return gulp.src('./src/js/services/*.js')
-    .pipe(fixmyjs({
-                globals : "angular, module, require, console",
-                node : true
-            }))
-    .pipe(concat('all_services.js'))
-    .pipe(gulp.dest('./src/js/'));
+    .pipe(concat('services.js'))
+    .pipe(gulp.dest('./dist/js/'));
     
 });
 
-gulp.task('controller', function(done){
-    return gulp.src('./src/js/controller/*.js')
-    .pipe(fixmyjs({
-                globals : "angular, module, require, console",
-                node : true
-            }))
-    .pipe(concat('all_controller.js'))
-    .pipe(gulp.dest('./src/js/'));
+gulp.task('collections', function(done){
+    return gulp.src('./src/js/collections/*.js')
+    .pipe(concat('collections.js'))
+    .pipe(gulp.dest('./dist/js/'));
     
 });
 
-gulp.task('directives', function(done){
-    return gulp.src('./src/js/directives/*.js')
-    .pipe(fixmyjs({
-                globals : "angular, require, console",
-                node : true
-            }))
-    .pipe(concat('all_directives.js'))
-    .pipe(gulp.dest('./src/js/'));
+gulp.task('modules', function(done){
+    return gulp.src('./src/js/modules/*.js')
+    .pipe(concat('modules.js'))
+    .pipe(gulp.dest('./dist/js/'));
+    
+});
+
+gulp.task('views', function(done){
+    return gulp.src('./src/js/views/*.js')
+    .pipe(concat('views.js'))
+    .pipe(gulp.dest('./dist/js/'));
 });
 
 gulp.task('css', function(){
-    return gulp.src('./src/css/**/**')
-        .pipe(concat('app.css'))
-        .pipe(minifyCss())
+    return gulp.src('./src/scss/**/**')
+        .pipe(concat('app.scss'))
+        .pipe(sass())
         .pipe(gulp.dest('./dist/css/'));
 });
 
@@ -169,17 +144,7 @@ gulp.task('collect-dist', function(done){
             gulp.src('src/templates/**/*.html')
                 .pipe(gulp.dest('dist/templates/'))
                 .on('end', end); 
-        },
-         function(end){
-            gulp.src('src/modules/**/*.*')
-                .pipe(gulp.dest('dist/modules/'))
-                .on('end', end);
-         },
-         function(end){
-                gulp.src(['src/js/*.js'])
-                    .pipe(gulp.dest('dist/js/'))
-                    .on('end', end);
-            }
+        }
     ], done);
 });
 
@@ -197,7 +162,7 @@ gulp.task('install-deps', function(done){
 * nwjs controlling via gulp
 */
 
-gulp.task('nw' , function(done){
+gulp.task('electron' , function(done){
     var nw = new NwBuilder({
         files: ["LICENCE", "./dist/**/**"],
         platforms: platforms,
@@ -215,11 +180,6 @@ gulp.task('nw' , function(done){
 
 });
 
-gulp.task('nw-run', function(done){
-    var run_proc = sh.exec('nwbuild -r ./dist/ -v '+version, {async:true,silent:silence});
-        run_proc.stdout.on('data', console.log);
-        run_proc.on('exit',done);
-});
 
 gulp.task('serve_dist', function(done){
     gulp.src('dist/')
